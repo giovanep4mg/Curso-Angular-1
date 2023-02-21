@@ -1,0 +1,15 @@
+<h1>Inicio Classe Filho</h1>
+<h4>Classe filho</h4>
+<!---texto so para avisar que o sobrenome veio da classe pai----->
+<h3>O sobrenome veio do elemento pai: {{sobrenome}}</h3>
+
+<!---Campo para digitar------>
+<label for="nome">Digite o nome:</label>
+
+<!---vai pegar o que foi digitado e salva na variável---->
+<input type="text" id="nome" [(ngModel)]="nome">
+
+<!--botão que vai acionar a janelinha, vai executar esse metodo-------->
+<button type="button" (click)="mostrarnome.emit(nome+' '+sobrenome)   ">Mostrar nome completo</button>
+
+<h1>Final Classe filho</h1>

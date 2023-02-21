@@ -1,0 +1,13 @@
+<h1>Inicio Renderizando Lista</h1>
+<h2>Renderizando uma lista de dados</h2>
+<ul class="lista-produtos">
+  <li *ngFor="let celular of celulares">
+      <strong>{{celular.nome}}</strong>
+      <p>{{celular.descricao}}</p>
+
+      <!--if = aparecer mensagem se celular for true "esgotado", se for false "diponivel"------>
+      <!--ngClass, vai mudar o style se o cel estiver esgotado ou não---->
+      <span [ngClass]="celular.esgotado ? 'esgotado' : '' ">{{celular.esgotado? "esgotado" : "disponivel"}} </span>
+  </li>
+</ul>
+<h1>Final Renderizando Lista</h1>

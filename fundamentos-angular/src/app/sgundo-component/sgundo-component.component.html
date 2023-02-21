@@ -1,0 +1,20 @@
+<!---Coisas que serão exibidas na página--->
+<h1>Inicio do segundo componete</h1>
+<div>
+<!--como carregar uma imagem ---->
+<img [src]="urlimagem" width="300" height="300" />
+
+<!---Adiciona nome que está no componet.ts, com letra Maiúscula---->
+<p>Nome: {{ nome | uppercase }}</p>
+
+<!---Adiciona cidade que está no componet.ts---->
+<p>Cidade: {{ cidade }}</p>
+
+<!---Adiciona data de nascimento que está no componet.ts, passando a formatação correta que deve aparecer------>
+<p>Data de nascimento: {{ dataNascimento | date : "dd/MM/yyyy" }}</p>
+<!---Botão para mostra a data, na janelinha----->
+<button (click)="mostrarDataNascimento()" type="button">
+  Mostrar data de nascimento
+</button>
+</div>
+<h1>Final do segundo componente</h1>

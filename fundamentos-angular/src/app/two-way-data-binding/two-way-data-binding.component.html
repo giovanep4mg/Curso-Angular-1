@@ -1,0 +1,15 @@
+
+<h1>Inicio do two way Data binding</h1>
+<!---Para adiconar dados e infomar os dados, usado para formulários-->
+<h2>two-way Data binding</h2>
+
+<!--Cria uma "label", que irá reveber o nome , para adiconar nome---->
+<label for="nome">Digite seu nome:</label>
+
+<!--Cria um campo de texto, para digitar o nome,vai interla o que foi digitado com o que vai aparecer na página---->
+<input type="text" [(ngModel)]="nome">
+
+<!--Exibi o nome digitado ---->
+<p>Nome digitado: {{nome}}</p>
+
+<h1>Final do two way Data binding</h1>

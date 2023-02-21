@@ -1,0 +1,10 @@
+<!---titulo---->
+<h1>Inicio Classe Pai</h1>
+<h2>Interação entre componentes</h2>
+<!----texto---->
+<h3>O sobrenome está definido no elemento pai: {{sobrenome}}</h3>
+<h3>O nome completo é {{filho.nome}} {{sobrenome}}</h3>
+
+<!--#filho é para ter acesso aos componentes, vai pode pegar  o nome do comp filho------>
+<app-componente-filho [sobrenome]="sobrenome" (mostrarnome)="mostrarNomeCompleto ($event)"  #filho ></app-componente-filho>
+<h1>Final Classe Pai</h1>
