@@ -1,3 +1,4 @@
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { SegundaPaginaComponent } from './segunda-pagina/segunda-pagina.component';
 import { PrimeiraPaginaComponent } from './primeira-pagina/primeira-pagina.component';
 
@@ -7,11 +8,20 @@ import { RouterModule, Routes } from '@angular/router';
 //criando a rota, que será um vetor
 const routes : Routes = [
 
-  //o que vai ser digitado após a barra no navegador, qual será o componente que irá aparecer é "PrimeiraPaginaComponent".
+  //quando você digita "primeira pagina" ou "segunda pagina", sem o hifén entre as palavras, após a barra "http://localhost:4200/" no navegador será redirecionado para o menu.
+
+  //quando você digita "primeira-pagina", após a barra "http://localhost:4200/" no navegador será executado esse componente "PrimeiraPaginaComponent", que abri a primeira página.
   { path : 'primeira-pagina', component : PrimeiraPaginaComponent },
 
-  //o que vai ser digitado após a barra no navegador, qual será o componente que irá aparecer é "PrimeiraPaginaComponent".
-  {path:'segunda-pagina', component: SegundaPaginaComponent}
+  //quando você digita "segunda-pagina", após a barra "http://localhost:4200/" no navegador será executado esse componente "SegundaPaginaComponent", que abri a segunda página.
+  {path:'segunda-pagina', component: SegundaPaginaComponent},
+
+  //quando você não digita nada, após a barra "http://localhost:4200/" no navegador, você será redirecionado para a primeira página.
+  {path:'', redirectTo: 'primeira-pagina', pathMatch: 'full'},
+
+  //quando você não digita algo errado, que não é "primeira-pagina", nem "segunda-pagina", após a barra "http://localhost:4200/" no navegador, será executado esse componente que exibirá uma mensagem de erro "404!Página não encontrada" .
+  {path:"**", component: PaginaNaoEncontradaComponent}
+
 
 ]
 
