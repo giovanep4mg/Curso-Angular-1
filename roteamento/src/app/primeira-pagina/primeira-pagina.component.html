@@ -1,8 +1,30 @@
-<h2>Primeira página</h2>
-<h3>
-  Você está na primeira página!<br>
-  Clique no botão e você irá para a segunda página.
-</h3>
-<br>
-<!--botao para ir para a segunda página---->
-<button type="button" (click)="moverParaSegundaPagina()">Ir para a segunda página</button>
+<div class="aula">
+  <div class="description">
+    <h2>
+      Roteamento entre págins, ultilizando o "angular-routes".<br />
+      Vai ter que criar um novo projeto:<br />
+      <br />
+      Crie um novo componente pelo cmd, usando esses comandos:<b
+        >ng new roteamento</b
+      >.<br />
+      Quando pedir para você escolher se quer instalar o angular routing, você
+      diz que não.<br />
+      Escolha o CSS, vai demorar um pouquinho para instalar.<br />
+      Após a instalação, você verifica se está mesmo na página "roteamento".<br />
+      E coloca esse comando que vai instalar a biblioteca do angular-routes:<br />
+      <b> npm i @angular/router</b>.<br />
+      Cria um módulo para trabalhar com roteamento, com esse comando
+      <b>ng module app-routing app</b>.<br />
+    </h2>
+  </div>
+  <h2>Primeira página</h2>
+  <h3>
+    Você está na primeira página!<br />
+    Clique no botão e você irá para a segunda página.
+  </h3>
+  <br />
+  <!--botao para ir para a segunda página---->
+  <button type="button" (click)="moverParaSegundaPagina()">
+    Ir para a segunda página
+  </button>
+</div>

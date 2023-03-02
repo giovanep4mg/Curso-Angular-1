@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+  border: 2px solid black;
+}
 a {
   font-size: 30px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.aula{
+  background-color: rgba(0, 255, 255, 0.318);
+  border: 2px solid red;
+  margin: 5px;
+  padding: 5px;
 }
