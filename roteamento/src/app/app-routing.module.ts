@@ -21,6 +21,7 @@ const routes: Routes = [
 
   // "/:id" esse é o parametro que tem que acessar na classe, e qual componente será executado.
   { path: 'pagina-consulta/:id', component: PaginaConsultaComponent },
+  { path: 'lazy-loading', loadChildren: () => import('./lazy-loading/lazy-loading.module').then(m => m.LazyLoadingModule) },
 
   //quando você não digita algo errado, que não é "primeira-pagina", nem "segunda-pagina", após a barra "http://localhost:4200/" no navegador, será executado esse componente que exibirá uma mensagem de erro "404!Página não encontrada" .
   { path: '**', component: PaginaNaoEncontradaComponent },
