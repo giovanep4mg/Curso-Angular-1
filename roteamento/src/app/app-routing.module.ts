@@ -1,3 +1,5 @@
+import { LoginComponent } from './login/login.component';
+import { PaginaProtegidaComponent } from './pagina-protegida/pagina-protegida.component';
 import { PaginaConsultaComponent } from './pagina-consulta/pagina-consulta.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { SegundaPaginaComponent } from './segunda-pagina/segunda-pagina.component';
@@ -5,6 +7,7 @@ import { PrimeiraPaginaComponent } from './primeira-pagina/primeira-pagina.compo
 
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AllGuard } from './all.guard';
 
 //criando a rota, que será um vetor, uma lista de rotas
 const routes: Routes = [
@@ -21,7 +24,24 @@ const routes: Routes = [
 
   // "/:id" esse é o parametro que tem que acessar na classe, e qual componente será executado.
   { path: 'pagina-consulta/:id', component: PaginaConsultaComponent },
-  { path: 'lazy-loading', loadChildren: () => import('./lazy-loading/lazy-loading.module').then(m => m.LazyLoadingModule) },
+
+  //
+  {
+    path: 'lazy-loading',
+    loadChildren: () =>
+      import('./lazy-loading/lazy-loading.module').then(
+        (m) => m.LazyLoadingModule
+      ),
+  },
+
+  //
+  {
+    path: 'pagina-protegida',
+    component: PaginaProtegidaComponent,
+    canActivate: [AllGuard],
+  },
+
+  { path: 'login', component: LoginComponent },
 
   //quando você não digita algo errado, que não é "primeira-pagina", nem "segunda-pagina", após a barra "http://localhost:4200/" no navegador, será executado esse componente que exibirá uma mensagem de erro "404!Página não encontrada" .
   { path: '**', component: PaginaNaoEncontradaComponent },

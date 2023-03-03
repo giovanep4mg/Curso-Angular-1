@@ -1,0 +1,19 @@
+<div>
+  <!--titulo-->
+  <h2>Login</h2>
+
+  <!--Campo de texto para o email-->
+  <label for="email">Email</label>
+
+  <!--Pegar os dados digitatos no campo de texto email-->
+  <input type="texto" id="email" [(ngModel)]="email" />
+
+  <!--Campo de texto para a senha-->
+  <label for="senha">Senha</label>
+
+  <!--Pegar o dados digitados no campo de texto senha-->
+  <input type="password" id="senha" [(ngModel)]="senha" />
+
+  <!--Acionar a função que vai fazer o login acontecer, fazendo as verificações que precisa-->
+  <button (click)="login()">Entrar</button>
+</div>
