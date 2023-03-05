@@ -1,3 +1,4 @@
+/*
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoService } from '../carrinho.service';
 
@@ -16,3 +17,4 @@ export class HeaderComponent implements OnInit {
   }
 
 }
+*/

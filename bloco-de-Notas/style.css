@@ -1,0 +1,21 @@
+.todoSite{
+    border: 3px solid black;
+    margin: 15px;
+    padding: 15px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+  }
+  
+  .todoSite h1{
+    font-family: cursive;
+    font-size: 30px;
+  }
+  .header-cabecario b{
+    color: red;
+  }
+  .description{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+  }
+  
+  
