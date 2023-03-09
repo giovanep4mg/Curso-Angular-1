@@ -1,20 +1,133 @@
 <!---Coisas que serão exibidas na página--->
-<h1>Inicio do segundo componete</h1>
 <div>
-<!--como carregar uma imagem ---->
-<img [src]="urlimagem" width="300" height="300" />
-
-<!---Adiciona nome que está no componet.ts, com letra Maiúscula---->
-<p>Nome: {{ nome | uppercase }}</p>
-
-<!---Adiciona cidade que está no componet.ts---->
-<p>Cidade: {{ cidade }}</p>
-
-<!---Adiciona data de nascimento que está no componet.ts, passando a formatação correta que deve aparecer------>
-<p>Data de nascimento: {{ dataNascimento | date : "dd/MM/yyyy" }}</p>
-<!---Botão para mostra a data, na janelinha----->
-<button (click)="mostrarDataNascimento()" type="button">
-  Mostrar data de nascimento
-</button>
+  <div id="segundoComponente" class="description">
+    <h1>Segundo Componente</h1>
+    <h2>
+      O segundo Componente, foi criado pelo cmd, do próprio VScode assim já gera tudo que vamos precisar, é mais rápido e prático.<br>
+      Mas você deve está dentro da pasta do projeto que está criando.<br>
+      <br>
+      <div class="imagem">
+        <img src="/assets/cmd-vscode.png" alt="print tela do computador">
+      </div>
+      <br>
+      Já vai colocar todos os componentes: .CSS, .HTML, .SPEC.TS, .TS .<br>
+      <br>
+      <div class="imagem">
+        <img src="/assets/componentes-html-css-ts.png" alt="print do programa">
+      </div>
+      <br>
+      O que devo fazer , para ele aparecer na página? <br>
+       Para isso vai no "app-component.html", e faz como está na imagem abaixo:<br>
+        <br>
+        <div class="imagem">
+          <img src="/assets/carregar.png" alt="print tela programa">
+        </div>
+        <br>
+      Ai tudo que eu colocar no "segundo-component.component.html", vai aparecer na página, como esse texto, que foi digitado lá.<br>
+      <br>
+      E no "segundo-component.component.css", vai está os estilos somente para este componente, que vamos falar mais sobre ele embreve.<br>
+    </h2>
+  </div>
+  <br>
+  <div class="interPolacao">
+      <div class="description">
+      <h1>Interpolação de texto</h1>
+      <h2>
+          Interpolação de texto, é forma como você consegue inseri informações da classe para dentro do template.<br>
+          Primeiro você vai na classe do componente, neste caso o "segundo-component.componet.ts",<br>
+          coloca a variável, contendo o que você deseja mostrar na página, veja a imagem:<br>
+          <div class="imagem">
+            <img src="/assets/classe-var.png" alt="print tela programa">
+          </div>
+          <br>
+          No "segundo-component.component.html", você pode ultilizar qualquer tag, e colocar "chaves" duplas e o nome da variável, que você quer mostrar no template ou na página.<br>
+          <div class="imagem">
+            <img src="/assets/mostrar-classe.png" alt="print tela programa">
+          </div>
+          <br>
+          Como fica na página:<br>
+          <br>
+          <!---Vai chamar a var "nome" que está na classe e mostra na página------>
+          <p>Nome: {{ nome }}</p>
+          <!---Adiciona cidade que está no componet.ts---->
+          <p>Cidade: {{ cidade }}</p>
+          <!--Adiciona a idade---->
+          <p>Idade: {{idade}}</p>
+          <br>
+      </h2>
+    </div>
+  </div>
+  <div class="piper">
+    <div class="description">
+    <h1>Usar o Pipe "|" para fazer formatações no texto</h1>
+      <h2>
+        Você coloca o texto dentro das chaves duplas e o pipe, como está a imagem abaixo: <br>
+        <div class="imagem">
+          <img src="/assets/pipe.png" alt="print do programa">
+        </div>
+        Do lado do piper você passa a formatação que você quer que seja feita, neste caso está deixando todo texto com letras Maiúsculas.<br>
+        <br>
+        Como fica na página:<br>
+        <br>
+        <!---Adiciona nome que está no componet.ts, com letra Maiúscula---->
+        <p>Nome: {{ nome | uppercase }}</p>
+        <br>
+        <div class="piper">
+          Você pode usar para fazer várias coisas, formatando a data de nascimento. <br>
+          Na imagem abaixo, foi colocada na classe, dentro de uma variável, essa data:<br>
+          <div class="imagem">
+            <img src="/assets/data-an-form.png" alt="print do programa">
+          </div>
+          <br>
+          No "segundo-component.component.html", foi adicionado a variável, mas com "pipe" data, para fazer a formatação, como mostra a imagem:<br>
+          <div class="imagem">
+            <img src="/assets/forma-data.png" alt="print do programa">
+          </div>
+          <br>
+            Como fica na página:<br>
+          <br>
+          <!---Adiciona data de nascimento que está no componet.ts, passando a formatação correta que deve aparecer------>
+          <p>Data de nascimento: {{ dataNascimento | date : "dd/MM/yyyy" }}</p>
+        </div>
+      </h2>
+    </div>
 </div>
-<h1>Final do segundo componente</h1>
+<br>
+<div class="carregaImagem">
+  <div class="description">
+    <h1>Carregar imagem</h1>
+    <h2>
+    Como carregar uma imagem?<br>
+    Você deve colocar a imagem na pasta "assets".<br>
+    Colocando ela numa variável dentro da classe, como mostra a imagem:<br>
+    <div class="imagem">
+      <img src="/assets/carregar-imagem-url.png" alt="print do programa">
+    </div>
+    <br>
+    Para usar essa imagem, vc usa a tag "img" , veja como é na imagem abaixo:<br>
+    <div class="imagem">
+      <img src="/assets/chamar -imagem-carregada.png" alt="print do programa">
+    </div>
+    Como fica na página:<br>
+    <div>
+      <!--como carregar uma imagem ---->
+      <img [src]="urlimagem" width="300" height="300" />
+    </div>
+  </h2>
+</div>
+<br>
+<div>
+      <!---Botão para mostra a data, na janelinha----->
+      <button (click)="mostrarDataNascimento()" type="button">
+      Mostrar data de nascimento
+      </button>
+  </div>
+</div>
+
+
+
+
+
+
+
+

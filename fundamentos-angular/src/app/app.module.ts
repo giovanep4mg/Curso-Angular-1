@@ -18,6 +18,7 @@ import { Servico2Component } from './servico2/servico2.component';
 import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component';
 import { CicloDeVidaPaiComponent } from './ciclo-de-vida-pai/ciclo-de-vida-pai.component';
 import { CardComponent } from './card/card.component';
+import { AngularComponent } from './angular/angular.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CardComponent } from './card/card.component';
     Servico2Component,
     CicloDeVidaComponent,
     CicloDeVidaPaiComponent,
-    CardComponent
+    CardComponent,
+    AngularComponent
 
   ],
   imports: [

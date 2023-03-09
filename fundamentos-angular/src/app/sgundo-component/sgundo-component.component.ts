@@ -13,11 +13,14 @@ export class SgundoComponentComponent {
   nome = 'Giovani';
   cidade = 'Passa-Quatro, Minas Gerais';
   idade = 39;
-  dataNascimento = "08/11/1983" ;
+
+  dataNascimento = "11/08/1983" ;
+
+
   urlimagem = '/assets/nego1.jpg';
 
   //cria um metodo para exibir a data numa "janelinha na página"
-  mostrarDataNascimento() {
+  mostrarDataNascimento(): void {
     // comando que exibe a janelinha,
     alert("A data de nascimento do Giovani é: " + this.dataNascimento);
   }
