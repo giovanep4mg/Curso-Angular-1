@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer, o final da página</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="todoSite">
+      <div class="title">
+        <h1>Produtos</h1>
+      </div>
+      <div class="description">
+        <h2>
+          Crie um novo componente, mas é um modulo = module, com o nome
+          produtos.<br />
+          Module, por que deixará mais rápido o carregamento da página.<br />
+          Já acrescenta uma rota para ele, e atrele ele ao modulo app.<br />
+          O comando é
+          <b>ng g module produtos --route produtos --module app.module</b>
+          Depois de criado, vá ate o <b>app-routing.module.ts</b>, e verifica se
+          foi criado uma rota para produtos.<br />
+          <br />
+          Para que ao abrir o site já abra essa página, vamos fazer isso:<br />
+          No componente <b>app-routing.module.ts</b>, crie uma nova rota, como
+          está na imagem abaixo<br />
+          <div class="imagem">
+            <img src="imagem/route-produtos.png" alt="print do código" />
+          </div>
+          <br />
+          Agora vamos criar a página de produtos o seu conteúdo, no
+          <b>produtos.component.html</b>, e adicione essas tags:<br />
+          "section" classe = "product-list", essa seção é sobre os produtos
+          <br />
+          "div" classe = "product__list__card",<br />
+          Crie um link "a" classe ="product-list__link,sem o href poid será um
+          link diferente<br />
+          "img", sem o alt, <br />
+          "h2", com a classe ="product-item__name", <br />
+          Coloque o nome<br />
+          "p" class="product-list__price",<br />
+          Adicione um valor, o preço e pode fechar a tag "p"
+          <br />
+          "p" class ="product-item-price__description",<br />
+          Coloque o texto:"á vista",<br />
+          Fecha a tag "p"<br />
+          "button" classe="product-item_buy-button" type="button", adiciona o
+          texto = "comprar"<br />
+          Veja como fica:<br />
+          <div class="imagem">
+            <img src="imagem/produtos-1.png" alt="print do código" />
+          </div>
+          <br />
+          Para colocar os estilos da página, é só copiar os arquivos que estão
+          na pasta "aula_6E-criando página de produtos".<br />
+          <br />
+          O style estão com o nome <b>produtos.component.css</b> você substitui
+          o outro na pasta do projeto.<br />
+          <br />
+          As imagens dos produtos estão também nesta pasta, que devem ser
+          copiadas e colocadas na pas com o mesmo nome dentro do projeto.<br />
+          <br />
+          <br />
+          Agora que já copiou ou trocou as pastas!<br />
+          Vamos ver como adiciona essas imagens, preços a lista ao site, como
+          fazer essa ligação.<br />
+          Para isso usa uma diretiva
+          <b>*ngFor="let produto of produtos"</b>, na "div
+          class="product__list__card" ,<br />
+          vai dá erro, por que não existe essa propriedade, para dá certo.<br />
+          <div class="imagem">
+            <img src="imagem/produtos-2.png" alt="print do código" />
+          </div>
+          <br />
+          Vai na classe <b>produtos.component.ts</b>
+
+          <div class="imagem">
+            <img src="./imagem/" alt="print do código" />
+          </div>
+          <br />
+
+          <div class="imagem">
+            <img src="./imagem/" alt="print do código" />
+          </div>
+          <br />
+
+          <br />
+        </h2>
+      </div>
+    </div>
+    <div>
+      <a href="">Próxima página</a><br />
+      <br />
+      <a href="footer.html">Voltar</a>
+    </div>
+    <br />
+    <br />
+  </body>
+</html>
