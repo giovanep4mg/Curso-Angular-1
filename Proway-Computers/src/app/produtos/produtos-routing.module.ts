@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.component';
 import { ProdutosComponent } from './produtos.component';
 
 const routes: Routes = [
-  { path: '', component: ProdutosComponent }
+  //
+  { path: '', component: ProdutosComponent },
+  //quando for colocado na barra de navegação , barra e id irá abrir essa página.
+  { path:':id', component: DetalheProdutoComponent }
   
 ];
 
