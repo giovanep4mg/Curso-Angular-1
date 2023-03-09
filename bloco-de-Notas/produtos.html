@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Footer, o final da página</title>
+    <title>Produtos, base de dados </title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -53,15 +53,18 @@
             <img src="imagem/produtos-1.png" alt="print do código" />
           </div>
           <br />
-          Para colocar os estilos da página, é só copiar os arquivos que estão
-          na pasta "aula_6E-criando página de produtos".<br />
+          Para simular um banco de dados, com os produtos, imagens, preços, tudo já está na pasta,<br>
+          basta copiar e adicionar no projeto, o arquivo se chama <b>produtos.ts</b>, <br>
+          copiar e colar dentro da pasta "produtos", assim você terá seu banco de dados.<br>
+          <br>
+          <b>Atenção:</b>  os arquivos estão na pasta "Aula-6-E-criando pagina de produtos".<br>
+          <br>
+          Para colocar os estilos da página, é só fazer a mesma coisa que fez antes.<br />
+          Copiando o arquivo <b>produtos.component.css</b> e substituindo o arquivo original do projeto.<br>
           <br />
-          O style estão com o nome <b>produtos.component.css</b> você substitui
-          o outro na pasta do projeto.<br />
-          <br />
-          As imagens dos produtos estão também nesta pasta, que devem ser
-          copiadas e colocadas na pas com o mesmo nome dentro do projeto.<br />
-          <br />
+          As imagens dos produtos, também está nessa pasta e deve ser copiada e adiconada no projeto.<br />
+          As imagens estão na pasta "Aula-6-E-criando.." , com o nome <b>assets</b>.<br>
+          Copie essa pasta e subtituia  pela original do projeto.<br>
           <br />
           Agora que já copiou ou trocou as pastas!<br />
           Vamos ver como adiciona essas imagens, preços a lista ao site, como
@@ -69,24 +72,24 @@
           Para isso usa uma diretiva
           <b>*ngFor="let produto of produtos"</b>, na "div
           class="product__list__card" ,<br />
-          vai dá erro, por que não existe essa propriedade, para dá certo.<br />
+          vai dá erro, por que não existe essa propriedade, para dá certo você:<br />
           <div class="imagem">
             <img src="imagem/produtos-2.png" alt="print do código" />
           </div>
           <br />
-          Vai na classe <b>produtos.component.ts</b>
-
+          Vai na classe <b>produtos.component.ts</b>, a vai adicionar a propriedade, que será um vetor.<br>
+          Como está na imagem abaixo:<br>
           <div class="imagem">
-            <img src="./imagem/" alt="print do código" />
+            <img src="./imagem/produtos-prorpiedade-classe.png" alt="print do código" />
           </div>
           <br />
-
+          Essa lista já foi criada no componente <b>produtos.ts</b>, que foi substituido no inicio.<br>
+          Agora veja como fica na página do site.<br>
           <div class="imagem">
-            <img src="./imagem/" alt="print do código" />
+            <img src="./imagem/prodytos-final.png" alt="print do código" />
           </div>
           <br />
-
-          <br />
+          Prontinho, agora sua página já tem as imagens, nomes, preços.<br>
         </h2>
       </div>
     </div>
