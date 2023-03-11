@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduto } from 'produtos';
+import { NotificacaoService } from 'src/app/notificacao.service';
 import { ProdutosService } from 'src/app/produtos.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class DetalheProdutoComponent {
   //Para importa os serviços de produtos, e ativar as rotas
   constructor(
     private produtosService: ProdutosService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private notificacaoService : NotificacaoService
     ){}
 
   //Pegar os parametros
@@ -34,6 +36,13 @@ export class DetalheProdutoComponent {
 
     //pegar o id do produto,
     this.produto = this.produtosService.getOne(produtoId);
+    
   }
+
+  //para passar uma mensagem quando clicar para adiconar no carrinho.
+  adicionarAoCarrinho(){
+    this.notificacaoService.notificar("O produto foi adicionado ao carrinho.");
+  }
+
 
 }

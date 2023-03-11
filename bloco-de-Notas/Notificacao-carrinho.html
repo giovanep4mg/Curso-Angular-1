@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notificação carrinho</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="todoSite">
+      <div class="title">
+        <h1>Notificação carrinho</h1>
+      </div>
+      <div class="description">
+        <h2>
+          Para mostrar uma mensagem de notificação, uma pequena "janelinha",<br>
+          que vai aparecer na tela e ficar durante alguns segundos.<br>
+          Para isso, vamos trabalhar com biblioteca que fornece componentes prontos.<br>
+          <br>
+          Abra o site <a href="https://material.angular.io/guide/getting-started">Angular,material</a>,<br>
+          <br>
+          Primeira coisa a fazer, é instalar essa biblioteca, para usar o que queremos.<br>
+          Dentro da pasta do projeto, ultilize esse comando <b>ng add @angular/material</b>, e espere carregar.<br>
+          <br>
+          Vai pedir para você, confirma se quer ou não instalar a biblioteca, coloque <b>y</b>, de yes, "sim".<br>
+          Vai te pedir para escolher qual estilo você quer.<br>
+          Vai pedir pra confirma se quer usar tipo de fonte dele.<br>
+          Vai pedir pra confirma se quer usar ou não animações.<br>
+          <b>renicie a página</b>, não deixa ela aberta, deve ser reniciada para adicionar essas novas configurações,<br>
+          fecha a página, e abra novamente, usando o <b>ng serve</b>.<br>
+          <br>
+          Para incluir os componentes da biblioteca dentro do nosso projeto,<br>
+          terá que fazer um "import", do componente que vamos usar.<br>
+          <br>
+          Vai no <b>app-module.ts</b>, e adicionar lá esse texto:<br>
+          "import { MatSnackBarModule } from '@angular/material/snack-bar';", e adiciona também na parte de baixo.<br>
+          Como está na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-import.png" alt="print do código" />
+          </div>
+          <br>
+          Agora vamos cria um serviço, que faça ele aparecer na página.<br>
+          Primeiro, crie um componente usando esse comando <b>ng g service notificacao</b>.<br>
+          Dentro do componente <b>notificacao.service.ts</b>, vamos ver como se faz para ele aparecer na página:<br>
+          Vai no "construtor" e adiciona esses parametros:<br>
+          constructor ( <b>private snackBar: MatSnackBar</b>) { }<br>
+          Se não importa automaticamente, use o texto abaixo, na parte de "import":<br>
+          <b>import { MatSnackBar } from '@angular/material/snack-bar';</b>
+          Como está na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-1.png" alt="print do código" />
+          </div>
+          <br>
+          Dentro do mesmo componente <b>notificacao.service.ts</b>.<br>
+          Agora vamos cria um método, que vai mostrar a "janelinha", quando for acionado:<br>
+          Na imagem abaixo está o código, de como deve ser feito:<br>
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-2.png" alt="print do código" />
+          </div>
+          <br>
+          Vai no componente <b>detalhe-produto.component.ts</b>,<br>
+          no "constructor" você adiciona esse texto, para usar o serviço de notificação:<br>
+          <b>private notificacaoService : NotificacaoService</b> 
+          Como está na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-4.png" alt="print do código" />
+          </div>
+          <br>
+          <br>
+          Depois dentro da classe crie um método "adicionarAoCarrinho()",<br>
+          o que ele vai fazer, por enquanto só vai mostrar a notificação.<br>
+          Como está na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-3.png" alt="print do código" />
+          </div>
+          <br>
+          Agora vai no componente <b>detalhe-produto.component.html</b>,<br>
+          adicione um "click", no botão acionando o método "adicionarAoCarrinho()",<br>
+          Como na imagem, abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-5.png" alt="print do código" />
+          </div>
+          <br>
+          A primeira parte, para fazer o carrinho está pronto.<br>
+          <br>
+        </h2>
+      </div>
+    </div>
+    <div>
+      <a href="">Próxima página</a><br />
+      <br />
+      <a href="service-produto.html">Voltar</a>
+    </div>
+    <br />
+    <br />
+  </body>
+</html>
