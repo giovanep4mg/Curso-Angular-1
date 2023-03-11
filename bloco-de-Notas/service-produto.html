@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serviço Produto</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="todoSite">
+      <div class="title">
+        <h1>Service  produto</h1>
+      </div>
+      <div class="description">
+        <h2>
+          Para fazer a ligação entre o banco de dados e o front-End.<br>
+          Crie um novo componente, usando o comando <b>ng g servide produtos</b>, ele que terá acesso ao "banco de dados".<br />
+          Vai no componente <b>produtos.service.ts</b>, cria uma propriedade, que fará esse acesso ao "banco de dados", <br>
+          será assim: " produto: IProduto[] = produtos ", <br>
+          Crie também dois métodos:<br>
+          <b>getAll</b> para retorna a lista de produtos.<br>
+          <b>getOne</b> vai retorna o produto de acordo com o seu "id".<br>
+          Veja como fica, por enquanto na imagem abaixo:<br> 
+          <div class="imagem">
+            <img src="imagem/service-produto-1.png" alt="print do código" />
+          </div>
+          <br>
+          Agora vamos ultilizar os métodos que criamos:<br>
+          Ao invés de importa diretamente vamos ultilizar o "service" para importa os dados,<br>
+          dizendo ao programa que pode ser uma lista de produtos ou indefinida.<br>
+          Vá no componente<b>produtos.component.ts</b>, e modifique as propriedades que já foram criadas lá:<br>
+          coloque desse jeito <b>produtos: IProduto[] | undefined</b>
+          <br>
+          Depois para fazer a importação dos produtos, vai no construtor e coloca assim:<br>
+          <b>constructor ( private produtosService : ProdutosService) { }</b><br>
+          Esse comando será responsável por importa os produtos.<br>
+          <br />
+          Depois faremos o "OnInit", método que será iniciado  e retornará a lista de produtos,<br>
+          o comando seria esse :<br>
+          <span style="color: blue;">
+          OnInit(): void  { <br>
+          __this.produtos = this.produtosService.getAll()<br>
+          </span>
+          <br>
+          Veja como fica o código, na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/service-produtos-2.png" alt="print do código" />
+          </div>
+          <br />
+          Agora vamos implementar o "detalhe de produto", abra o componente <b>detalhe-produto.component.ts</b><br>
+          Crie um método "construtor", para poder pegar a lista de produtos usando o "service" e a rota.<br>
+          Adiciona na classe o construtor,e como paramentro, você coloca:<br>
+          O código seria como esse na imagem:<br>
+          <div class="imagem">
+            <img src="imagem/service-produtos-3.png" alt="print do código" />
+          </div>
+          <br>
+          <b>private produtosService: ProdutosService</b> que é para poder usar o bannco de dados.<br>
+          <b>private route: ActivatedRoute</b> para você pode usar o serviço de rota <br>
+          <br>
+          Cria uma propriedade com esse nome "<b>produto: IProduto | undefined ;</b>" <br>
+          <br>
+          Crie um método, que será inicializado junto com o programa, como está na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/service-produto-4.png" alt="print do código" />
+          </div>
+          <br />
+          <b>const routeParams = this.route.snapshot.paramMap;</b> vai trazer todos os paramentros da rota.<br>
+          <b>const produtoId = Number (routeParams.get("id"))</b>, para pegar o produto de acordo com seu id, se for um número<br>
+          <b>this.produto = this.produtosService.getOne(produtoId);</b>, vai obter o produto de acordo com o id <br>
+            <br>
+          Agora basta modificar o template, que está no componente <b>detalhe-produto.component.html</b>.<br>
+          Primeiro vamos modificar a imagem do produto, pelo texto <b>produto?.imagem</b>.<br>
+          No código fica assim, como na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/service-produtos-6-trocar.png" alt="print do código" />
+          </div>
+          <br />
+          E na página vai mudar a imagem, e ficará como na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/sevice-produto-7-pag.png" alt="print do código" />
+          </div>
+          <br />         
+          Agora modifica o "h2", para puxar da base de dados o nome e descrição do produto,<br>
+          ao invés da descrição, escreva isso no lugar  <b>{{ produto?.descricao }}</b><br>
+          <br>
+          Agora modifica o "h3" também,  para puxar da base de dados, o preço do produto,<br>
+          ao invés da descrição, escreva isso no lugar  <b>{{ produto?.preco }}</b><br>
+          <br>
+          Agora para mudar a quantidade , vai no componente<b>detalhe-produto.component.ts</b>,<br>
+          adiciona a propriedade "Quantidade = 1;", ela já vai sempre iniciar valendo "1".<br>
+          <br>
+          Vai no componente <b>produtos.module.ts</b>, e na parte de importação acrescente <b>FormsModule</b>.<br>
+          Para poder trabalhar com o "ngModel", dentro do componente "produtos".<br>
+          <br>
+          Agora vai no componente <b>detalhe-produto.component.html</b>, e acrescenta o "ngModel" na tag "Input",<br>
+          coloque assim dentro da tag <b>[(ngModel)] ="quantidade" min="1"</b>, já vai acrescenta uma valor minímo.<br>
+          <div class="imagem">
+            <img src="imagem/service-produtos-8-ngmodel.png" alt="print do código" />
+          </div>
+          <br />
+          Agora, UNIDADES EM ESTOQUE, para criar essa parte, você vai no <b>produtos.ts</b>,<br>
+          acrescenta a propriedade "quantidadeEstoque: number", depois<br>
+          Colocar em todos os produtos com o valor, <b>quantidadeEstoque: 10</b> desse jeito.<br>
+          Como na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/service-produtos-8.png" alt="print do código" />
+          </div>
+          <br />
+          Prontinho essa parte já finalizamos!
+          <br>
+           Veja como fica a página de detalhes do produto, na imagem abaixo:<br>
+           <div class="imagem">
+            <img src="imagem/sevice-produto-7-pag.png" alt="print do código" />
+          </div>
+          <br />
+          <br />
+          Prontinho, a ligação entre o banco de dados e o front-end, foi criado.<br>
+          <br>
+        </h2>
+      </div>
+    </div>
+    <div>
+      <a href="">Próxima página</a><br />
+      <br />
+      <a href="detalhe-produto.html">Voltar</a>
+    </div>
+    <br />
+    <br />
+  </body>
+</html>
