@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adicionar no  carrinho</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="todoSite">
+      <div class="title">
+        <h1>Adicionar no carrinho</h1>
+      </div>
+      <div class="description">
+        <h2>
+            Vamos criar a parte que vai adicionar no carrinho, pegando a quantidade e atualizando.<br>
+            Para isso vamos criar um serviço, usando o comando <b>ng g service carrinho</b>.<br>
+            <br>
+            Vai no componente <b>produtos.ts</b>, onde vamos criar a interface, o nome da interface será :<br>
+            <b>export interface IProdutoCarrinho extends IProduto</b>, que vai ter os mesmo dados de produtos, <br>
+            mas terá só uma propriedade adiciona, a propriedade <b>Quantidade</b>, adiciona e diz que ela será "number.<br>"
+            Como está na imagem abaixo:<br>
+            <div class="imagem">
+                <img src="imagem/" alt="print do código" />
+              </div>
+              <br>
+            No componente <b>carrinho.service.ts</b>, já acrescenta a propriedade "itens : ", <br>
+            depois vai no <b>produtos.ts</b>, onde vamos criar a interface
+          
+          
+          
+          
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-import.png" alt="print do código" />
+          </div>
+          <br>
+          
+          <b>import { MatSnackBar } from '@angular/material/snack-bar';</b>
+          Como está na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-1.png" alt="print do código" />
+          </div>
+          <br>
+         
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-2.png" alt="print do código" />
+          </div>
+          <br>
+          
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-4.png" alt="print do código" />
+          </div>
+          <br>
+          <br>
+          
+          <div class="imagem">
+            <img src="imagem/carrinho-angular-5.png" alt="print do código" />
+          </div>
+          <br>
+          A primeira parte, para fazer o carrinho está pronto.<br>
+          <br>
+        </h2>
+      </div>
+    </div>
+    <div>
+      <a href="">Próxima página</a><br />
+      <br />
+      <a href="Notificacao-carrinho.html">Voltar</a>
+    </div>
+    <br />
+    <br />
+  </body>
+</html>

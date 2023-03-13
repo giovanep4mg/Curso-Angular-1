@@ -7,6 +7,12 @@ export interface IProduto {
     imagem: string;
 }
 
+// o que vai para dentro do carrinho
+export interface IProdutoCarrinho extends IProduto {
+
+  Quantidade: number;
+}
+
 export const produtos = [
     { id: 1, descricao: "Mouse gamer", preco: 439.00, descricaoPreco: "À vista no PIX", imagem: "/assets/mouse-3.jpg",quantidadeEstoque: 10 },
     { id: 2, descricao: "Monitor muito bom", preco: 1200.50, descricaoPreco: "À vista no PIX", desconto: 2000.00, imagem: "/assets/monitor-1.jpg",quantidadeEstoque: 10 },
