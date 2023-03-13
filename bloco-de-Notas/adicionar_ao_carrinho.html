@@ -19,46 +19,100 @@
             <br>
             Vai no componente <b>produtos.ts</b>, onde vamos criar a interface, o nome da interface será :<br>
             <b>export interface IProdutoCarrinho extends IProduto</b>, que vai ter os mesmo dados de produtos, <br>
-            mas terá só uma propriedade adiciona, a propriedade <b>Quantidade</b>, adiciona e diz que ela será "number.<br>"
+            mas terá só uma propriedade diferente, a propriedade <b>Quantidade</b>, adiciona e diz que ela será "number.<br>"
             Como está na imagem abaixo:<br>
             <div class="imagem">
-                <img src="imagem/" alt="print do código" />
+                <img src="imagem/adicionar-carrinho-1.png" alt="print do código" />
               </div>
               <br>
             No componente <b>carrinho.service.ts</b>, já acrescenta a propriedade "itens : ", <br>
-            depois vai no <b>produtos.ts</b>, onde vamos criar a interface
-          
-          
-          
-          
-          <div class="imagem">
-            <img src="imagem/carrinho-angular-import.png" alt="print do código" />
+            que irá uma lista, vetor, que vai iniciar vazio.<br>
+            Como está na imagem abaixo:<br>
+            <div class="imagem">
+              <img src="imagem/adicionar-carrinho-2.png" alt="print do código" />
+            </div>
+            <br>
+            Agora, vamos começar a criar os métodos,<br>
+            para adicionar ao carrinho, limpar o carrinho e obter informações do carrinho.<br>
+            <br>
+            Primeiro método que vamos criar é o <b>obtemCarrinho</b>, que vai obter a lista de produtos,<br>
+            as informações serão salvas dentro do "localStorage", quando você entrar já vai está salvo dentro do carrinho,<br>
+              Como está na imagem abaixo:<br>
+            <div class="imagem">
+              <img src="imagem/adicionar-carrinho-3.png" alt="print do código" />
+            </div>
+            <br>
+            Segundo método, <b>adicionarAoCarrinho( produto: IProdutoCarrinho )</b>, coloca um,<br>
+            <b>this.itens.push( produto )</b> = para acrescenta o novo produto no carrinho,<br>
+            <br>
+            e para salvar isso no "localStorage":<br> 
+            <b>localStorage.setItem( "carrinho", JSON.stringify(this.item) )</b> <br>
+            <br>
+            "( this.item )" é a lista de produtos.<br>
+            "JSON.stringify" é para converter um objeto em string.<br>
+            "carrinho" é a chave .<br>
+            Então, vai pegar o item que é um objeto mas vai converter em string,<br>
+            usando a chave "carrinho", vai salvar no "localStorage"<br>
+            Como está na imagem abaixo:<br>
+           <div class="imagem">
+            <img src="imagem/adicionar-carrinho-4.png" alt="print do código" />
           </div>
           <br>
-          
-          <b>import { MatSnackBar } from '@angular/material/snack-bar';</b>
+          Terceiro método é para limpar o carrinho, nome do método é <b>limparCarrinho()</b>,<br>
+          para limpar os itens = <b>this.itens = [] </b>, <br>
+          para limpar o localStorage = <b>localStorage.clear()</b>,<br>
+          Como na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/adicionar-carrinho-5.png" alt="print do código" />
+          </div>
+          <br>
+          Agora vamos usar esses métodos dentro da página.<br>
+          <br>
+          Vai no componente <b>detalhes-produto.component.ts</b>,<br>
+          vai dizer que vai ultilizar o serviço de carrinho, dentro do "constructor",
+          você adiciona o <b>private carrinhoService : carrinhoService</b>.<br>
           Como está na imagem abaixo:<br>
           <div class="imagem">
-            <img src="imagem/carrinho-angular-1.png" alt="print do código" />
+            <img src="imagem/adicionar-carrinho-6.png" alt="print do código" />
           </div>
           <br>
-         
+          Agora, vai no método "adicionarAoCarrinho", e acrescenta esses códigos,<br>
+          <b>const produto: IProdutoCarrinho = { </b>, variável ligada a interface dos produtos,<br>
+          <b>...this.produto!,</b>, pega todos os dados do produtos,descriçao,preço,etc...,<br>
+          <b>Quantidade : this.Quantidade</b>, pega a quantidade desse produto,<br>
+          fecha o "}", e logo abaixo coloque :<br>
+          <b>this.CarrinhoService.adicionarAoCarrinho(produto);</b>, vai retorna o produto, e salvar no "localStorage".<br>
+          Veja como fica na imagem abaixo:<br>
           <div class="imagem">
-            <img src="imagem/carrinho-angular-2.png" alt="print do código" />
+            <img src="imagem/adicionar-carrinho-7.png" alt="print do código" />
           </div>
           <br>
-          
+          Para verificar de deu certo, vai na página, clique no botão "F12", para inspecionar a página,<br>
+          depois vai em "source", "application", "localStorage",dentro dessa pasta, clique no link abaixo,<br>
+          quando você clicar no botão para adicionar o carrinho, veja se foi adicionado no "localStorage".<br>
+          Como na imagem abaixo:<br> 
           <div class="imagem">
-            <img src="imagem/carrinho-angular-4.png" alt="print do código" />
+            <img src="imagem/adicionar-carrinho-8.png" alt="print do código" />
           </div>
           <br>
-          <br>
-          
+          Agora, vamos atualizar o contador de quantidade de produtos em estoque,<br>
+          no componente <b>header.components</b>, você adiciona nos parametros do "constructor",<br>
+          esse código <b>public carrinhoService: CarrinhoService</b>.<br>
+          Como fica na imagem abaixo:<br>
           <div class="imagem">
-            <img src="imagem/carrinho-angular-5.png" alt="print do código" />
+            <img src="imagem/adicionar-carrinho-9.png" alt="print do código" />
           </div>
           <br>
-          A primeira parte, para fazer o carrinho está pronto.<br>
+          Depois vai no componente <b>header.componet.html</b>, e na parte do carrinho, no lugar do número,<br>
+          <b>{{ carrinhoService.obtemCarrinho().length }}</b>, para mostrar na página,<br>
+          quantos itens há dentro do carrinho.<br>
+          Veja como é o código na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="imagem/adicionar-carrinho-10.png" alt="print do código" />
+          </div>
+          <br>
+          Essa parte de adiciona os itens no carrinho terminou.<br>
+          Mas ainda falta algumas coisas .<br>
           <br>
         </h2>
       </div>
