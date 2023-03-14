@@ -12,6 +12,7 @@ const routes: Routes = [
 
   //para carregar a página logo quando se inicia
   { path: '', redirectTo: 'produtos', pathMatch: 'full' },
+  { path: 'carrinho', loadChildren: () => import('./carrinho/carrinho.module').then(m => m.CarrinhoModule) },
 
   //rota para carregar a página não encontrada
   {path:'**',component: NaoEncontradaComponent},
