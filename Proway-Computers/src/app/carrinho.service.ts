@@ -1,4 +1,4 @@
-import { IProdutoCarrinho } from './../../produtos';
+import { IProdutoCarrinho } from './produtos';
 import { Injectable } from '@angular/core';
 
 @Injectable({

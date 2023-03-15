@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IProduto, produtos } from 'produtos';
+import { IProduto, produtos } from 'src/app/produtos';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class ProdutosService {
 
   // vai retorna uma produto de acordo com seu id
   getOne(produtoId: number){
-    //retorna um produto,procurar(de acordo com essa condiçao) 
+    //retorna um produto,procurar(de acordo com essa condiçao)
     return this.produtos.find(produto => produto.id = produtoId)
   }
 }

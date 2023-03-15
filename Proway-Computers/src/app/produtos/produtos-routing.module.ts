@@ -4,11 +4,11 @@ import { DetalheProdutoComponent } from './detalhe-produto/detalhe-produto.compo
 import { ProdutosComponent } from './produtos.component';
 
 const routes: Routes = [
-  //
-  { path: '', component: ProdutosComponent },
+  //se não estiver nada vai abrir o componente produtos
+  { path: ' ', component: ProdutosComponent },
   //quando for colocado na barra de navegação , barra e id irá abrir essa página.
   { path:':id', component: DetalheProdutoComponent }
-  
+
 ];
 
 @NgModule({
