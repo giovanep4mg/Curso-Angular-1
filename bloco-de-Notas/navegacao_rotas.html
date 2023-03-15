@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navegação, rotas do site</title> 
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="todoSite">
+      <div class="title">
+        <h1>Navegação, rotas do site</h1>
+      </div>
+      <div class="description">
+        <h2>
+            Vamos adicionar o roteamento do site, pois teremos algumas páginas.<br>
+            No pront de comando coloque <b>ng g module rounting --flat --module app.module</b>, <br>
+            "--flat"  quer dizer que não vai ficar dentro de uma pasta.<br />
+            "--module app.module" que vai ser adicionado nesse modulo/ module.<br>
+            Veja como fica o código na imagem abaixo:<br />
+            <div class="imagem">
+                <img src="imagem/rota-1.png" alt="print do código" />
+            </div>
+            <br />
+            Dentro desse componente <b>app-routing.module.ts</b>,<br>
+            Crie as rotas:<br>
+            "const routes: Routes = []" , por enquanto ficará vazia.<br>
+            No <b>@NgModule</b>, para importa e exporta,<br>
+            dentro do " import ", coloque assim: <b>RouterModule.forRoot(routes)</b>, <br>
+            e no "export", coloque assim: <b>RouterModule</b>
+            Veja como fica o código na imagem abaixo:<br>
+            <div class="imagem">
+                <img src="imagem/rota-2a.png" alt="print do código" />
+            </div>
+            <br />
+            Agora vai dentro do componente <b>app.component.html</b>,<br>
+            coloca debaixo do "header", a tag:<br>
+            <b>router-outlet</b>.<br>
+            Veja como fica o código na imagem abaixo:<br />
+            <div class="imagem">
+                <img src="imagem/rota-2b.png" alt="print do código" />
+            </div>
+            <br />
+        </h2>
+      </div>
+    </div>
+    <div>
+      <a href="produtos.html">Próxima página</a><br />
+      <br />
+      <a href="navegacao_rotas.html">Voltar</a>
+    </div>
+    <br />
+    <br />
+  </body>
+</html>
