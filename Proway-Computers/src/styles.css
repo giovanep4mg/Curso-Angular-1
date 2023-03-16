@@ -28,7 +28,7 @@ time, mark, audio, video {
 
 
 
-/* HTML5 display-role reset for older browsers */
+/* Redefinição da função de exibição HTML5 para navegadores mais antigos */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -96,3 +96,6 @@ textarea {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

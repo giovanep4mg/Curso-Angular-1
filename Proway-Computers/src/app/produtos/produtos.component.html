@@ -5,7 +5,7 @@
   <div class="product-list__card" *ngFor="let produto of produtos">
 
     <!--A imagem será um link, para mostra o produto, e dá mais detalhes sobre ele, como nome, descrição, etc...-->
-    <a class="product-list__link"></a>
+    <a routerLink="/produto/{{produto.id}}" class="product-list__link"></a>
     <img [src]="produto.imagem" />
 
     <!--Chama o objeto "produto", pedindo a sua "descição"-->
@@ -22,4 +22,4 @@
 
   </div>
 </section>
-<span>Testando a página produto</span>
+teste se vai aparecer

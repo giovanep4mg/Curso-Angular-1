@@ -15,20 +15,23 @@ const routes: Routes = [
 
   //
   { path: 'carrinho', loadChildren: () => import('./carrinho/carrinho.module').then(m => m.CarrinhoModule) },
-  { path: 'produto', loadChildren: () => import('./produto/produto.module').then(m => m.ProdutoModule) },
+
 
   //rota para carregar a página não encontrada
   {path:'**',component: NaoEncontradaComponent},
 
-  //rota para carregar a página detalhe-produto
-  //{path:':id',component:DetalheProdutoComponent}
+
 
   //
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)
+  declarations:[],
+  imports: [
+    RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule {}

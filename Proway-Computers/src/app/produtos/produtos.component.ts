@@ -21,7 +21,7 @@ export class ProdutosComponent {
 
   //Para obter todos os produtos
   OnInit(): void {
-    this.produtos = this.produtosService.getAll()
+    this.produtos = this.produtosService.getAll();
   }
 
 
