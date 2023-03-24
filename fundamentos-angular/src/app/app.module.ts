@@ -19,6 +19,10 @@ import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component';
 import { CicloDeVidaPaiComponent } from './ciclo-de-vida-pai/ciclo-de-vida-pai.component';
 import { CardComponent } from './card/card.component';
 import { AngularComponent } from './angular/angular.component';
+import { InterpolacaoDeTextComponent } from './interpolacao-de-text/interpolacao-de-text.component';
+import { PiperComponent } from './piper/piper.component';
+import { CarregarImagensComponent } from './carregar-imagens/carregar-imagens.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
 
 @NgModule({
   declarations: [
@@ -37,13 +41,16 @@ import { AngularComponent } from './angular/angular.component';
     CicloDeVidaComponent,
     CicloDeVidaPaiComponent,
     CardComponent,
-    AngularComponent
+    AngularComponent,
+    InterpolacaoDeTextComponent,
+    PiperComponent,
+    CarregarImagensComponent,
+    EventBindingComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //para usar a ligação entre receber e mostra dados
     FormsModule
   ],
   providers: [],

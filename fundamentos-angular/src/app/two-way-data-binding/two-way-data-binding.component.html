@@ -1,15 +1,80 @@
+<!--Aula-Interpolaçao-->
+<div class="aula">
+    <div class="description">
+    <h1 class="title">two way data binding</h1>
+      <h2>
+        <br>
+          <section class="criarComponente">
+            Eu criei um novo componente, chamado "two-way-data-binding",<br>
+            Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+            coloque esse comando <b>ng g c </b><span>*nome do componente que seja criar*</span>, dá "enter" e ele vai criar para você.<br>
+            Esse comando "ng g c" significa = <b>ng generate component</b>.<br>
+            <br>
+            <b>Atenção:</b> já coloque o componente criado para aparecer no template,<br>
+            para isso vai no componente <b>app.component.html</b>, adiciona o componente criado,<br>
+            <b>app-two-way-data-binding</b>, verifique se está aparecendo no template e pronto.<br>
+          </section>
+          <br>
+          É uma troca de dados, entre o componente e o template,<br>
+          <br>
+          Depois de criar o componente, vai no <b>two-way-data-binding.component.ts</b>,<br>
+          dentro dele, na classe adicione a propriedade <b> nome = "" ; </b>.<br>
+          <br>
+          Agora vai no componente <b>two-way-data-binding.component.html</b>,<br>
+          adicione uma tag "h3", só para colocar um titulo e já pode fechar ela "/h3",<br>
+          abaixo dela um "p", dentro abre "chaves duplas", coloque <b> nome </b>, <br>
+          feche as "chaves duplas", e o "p".<br>
+          Veja como fica no código:<br>
+          <div class="imagem">
+              <img src="/assets/two-way-1.png" alt="print do código">
+          </div>
+          <br>
+          Mas como a propriedade "nome" está vazia, não irá aparecer nada no template,<br>
+          agora vamos pegar o dado do template, enviar para a componente e vice versa.<br>
+          <br>
+          No template mesmo, abaixo do "p", adicione:<br>
+          "label" com <b>for = "nome" </b>, e dentro dela digite:<br>
+          "Digite seu nome:", fecha a "label", abaixo dela coloque um,<br>
+          "input" do tipo texto = <b> type = "text"</b>.<br>
+          Para facilitar e fazer mais sentido, coloque a tag "p",<br>
+          abaixo do "input", e acrescenta um texto para marca,<br>
+          "O nome digitado é: ",<br>
+          Veja a imagem do código:<br>
+          <div class="imagem">
+              <img src="/assets/two-way-2.png" alt="print do código">
+          </div>
+          <br>
+          Agora para fazer a interação entre eles, digitar e aparecer.<br>
+          <br>
+          Vamos usar uma diretiva <b>ngModel</b>
+          Adiciona ela no "input", passa qual é a propriedade que está atrelada a ela.<br>
+          "input type = 'text' <b>[(ngModel)]="nome"</b>,<br>
+          Veja a imagem do código:<br>
+          <div class="imagem">
+              <img src="/assets/two-way-3.png" alt="print do código">
+          </div>
+          <br>
+          Vai da um erro, e para resolver  você vai no componente,<br>
+          <b>app.module.ts</b> e no import, adicione o <b>FormsModule</b>
+          <div class="imagem">
+              <img src="/assets/two-way-4.png" alt="print do código">
+          </div>
+          <br>
+          Agora vejamos como fica no template:<br>
+          <div class="exemplo" style="background-color: rgb(236, 238, 240);  border: 2px solid black;" >
 
-<h1>Inicio do two way Data binding</h1>
-<!---Para adiconar dados e infomar os dados, usado para formulários-->
-<h2>two-way Data binding</h2>
+              <h3>two-way Data binding</h3>
+              <label for="nome">
+                  Digite seu nome:
+              </label>
+              <input type="text" [(ngModel)]="nome">
+              <p> O nome digitado é : {{ nome }} </p>
 
-<!--Cria uma "label", que irá reveber o nome , para adiconar nome---->
-<label for="nome">Digite seu nome:</label>
+          </div>
+      </h2>
+  </div>
+</div>
 
-<!--Cria um campo de texto, para digitar o nome,vai interla o que foi digitado com o que vai aparecer na página---->
-<input type="text" [(ngModel)]="nome">
 
-<!--Exibi o nome digitado ---->
-<p>Nome digitado: {{nome}}</p>
 
-<h1>Final do two way Data binding</h1>
+

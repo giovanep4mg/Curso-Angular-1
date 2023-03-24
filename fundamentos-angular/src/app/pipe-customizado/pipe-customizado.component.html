@@ -1,22 +1,67 @@
-<div>
-  <h1>Criando o "pipe" customizado</h1>
-  <div class="description">
-      Cria um novo componente com o nome "pipe-customizado"
-
-    <div class="imagem">
-      <img src="" alt="">
+<div class="aula">
+    <h1 class="title">Criando o "pipe" customizado</h1>
+    <div class="description">
+        <h2>
+          <section class="criarComponente">
+            Eu criei um novo componente, chamado "pipe-customizado",<br>
+            Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+            coloque esse comando <b>ng g pipe</b><span>*nome do componente que seja criar*</span>, dá "enter" e ele vai criar para você.<br>
+            Esse comando "ng g " significa = <b>ng generate </b>.<br>
+          </section>
+          <br>
+          Já vimos como usar o <b>pipe</b>, e agora vamos criar um <b>pipe-customizado</b>, <br>
+          vai no pront de comando, verifique se está dentro da pasta do seu projeto.<br>
+          <br>
+          Adicione esse comando <b>ng g pipe multiplica</b> dá enter,<br>
+          já vai ser declarado e importado dentro do <b>app.module.ts</b>.<br>
+          <br>
+          Ele não vai ficar dentro de nenhuma pasta, fica perto da pasta "assets",<br>
+          dentro do componente <b>multiplica.pipe.ts</b>, você vai ver:<br>
+          "decorator" e esse nome é o que temos que usar quando for usar o pipe.<br>
+          <div class="imagem">
+              <img src="/assets/pipe-customizado-1.png" alt="print do código">
+          </div>
+          <br>
+          E também a classe "implementa" o <b>PipeTransform</b>,como está na imagem:<br>
+          <div class="imagem">
+              <img src="/assets/pipe-customizado-2.png" alt="print do código">
+          </div>
+          <br>
+          Logo embaixo, já tem um método <b>transform</b>,<br>
+          que tem que passar alguns parametros:<br>
+          <br>
+          <b>value:</b> que é o valor.<br>
+          <b>unknowno:</b> que é do tipo, "number, string,...".<br>
+          <b>args:</b> que é os argumentos.<br>
+          <b>unknowno:</b> que é do tipo, "number, string,...".<br>
+          <b>unknowno:</b> que fica sem nada mesmo<br>
+          <br>
+          <b>return valor * "argumento" ;</b><br>
+          <br>
+          <br>
+          Agora que foi criado, vamos testar ele dentro do template,<br>
+          vou cria um "h2", só para colocar um titulo, fecho o "/h2",<br>
+          <br>
+          depois um "p" um paragráfo:<br>
+          dentro dele "duas chaves duplas",<br>
+          dentro dela <b> 2 | multiplica: 4 </b> ,<br>
+          fecho as "duas chaves duplas" e fecho o "p".<br>
+          <br>
+          Veja na imagem como fica o código:<br>
+          <div class="imagem">
+            <img src="/assets/pipe-customizado-3.png" alt="print do código">
+        </div>
+        <br>
+          E na página fica assim:<br>
+          <div class="exemplo">
+              <h2>Inicio do Pipe</h2>
+              <p>{{ 2 | multiplica : 4 }}</p>
+              <p>{{ 5 | multiplica : 5 }}</p>
+              <p>{{ 6 | multiplica : 10 }}</p>
+              <p>{{ 10 | multiplica : 7 }}</p>
+              <p>{{ 20 | multiplica : 3 }}</p>
+              <p>{{ 10 | multiplica : 9 }}</p>
+          </div>
+        </h2>
     </div>
-  </div>
-
-
-
-
-
-  <h1>Inicio do Pipe</h1>
-  <p>{{ 2 | multiplica : 4 }}</p>
-  <p>{{ 5 | multiplica : 5 }}</p>
-  <p>{{ 6 | multiplica : 10 }}</p>
-  <p>{{ 10 | multiplica : 7 }}</p>
-  <p>{{ 20 | multiplica : 3 }}</p>
-  <p>{{ 10 | multiplica : 9 }}</p>
 </div>

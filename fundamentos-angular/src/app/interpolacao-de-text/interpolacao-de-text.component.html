@@ -1,0 +1,41 @@
+<!--Aula-Interpolaçao-->
+<div class="aula2">
+  <div class="description">
+  <h1 class="title">Interpolação de texto</h1>
+      <h2>
+      <br>
+      Interpolação de texto, é forma como você consegue inseri informações da classe para dentro do template.<br>
+      <br>
+      <section class="criarComponente">
+        Eu criei um novo componente, chamado "interpolacao-de-text",<br>
+        Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+        coloque esse comando <b>ng g c </b><span>*nome do componente que seja criar*</span>, dá "enter" e ele vai criar para você.<br>
+        Esse comando "ng g c" significa = <b>ng generate component</b>.<br>
+      </section>
+      <br>
+      Primeiro você vai na classe do componente, neste caso o <b>interpolacao-de-text.componet.ts</b>,<br>
+      coloca a variável, contendo o que você deseja mostrar na página, veja a imagem:<br>
+      <div class="imagem">
+          <img src="/assets/classe-var.png" alt="print tela programa">
+      </div>
+      <br>
+      No <b>interpolacao-de-text.component.html</b>, você pode ultilizar qualquer tag,<br>
+      e colocar "chaves" duplas e o nome da propriedade "variável", que você quer mostrar no template.<br>
+      Na imagem abaixo, veja como é o código:<br>
+      <div class="imagem">
+          <img src="/assets/mostrar-classe.png" alt="print tela programa">
+      </div>
+      <br>
+      Como fica na página:<br>
+      <div class="exemplo" style="background-color: white;">
+          <!---Vai chamar a var "nome" que está na classe e mostra na página------>
+          <p>Nome: {{ nome }}</p>
+          <!---Adiciona cidade que está no componet.ts---->
+          <p>Cidade: {{ cidade }}</p>
+          <!--Adiciona a idade---->
+          <p>Idade: {{idade}}</p>
+      </div>
+      <br>
+      </h2>
+  </div>
+</div>

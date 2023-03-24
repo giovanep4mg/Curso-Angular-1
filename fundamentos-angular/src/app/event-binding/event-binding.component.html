@@ -1,0 +1,82 @@
+<!--Aula-Interpolaçao-->
+<div class="aula">
+   <div class="description">
+   <h1 class="title">Event Binding - Vinculação de Eventos</h1>
+      <h2>
+         <br>
+         <section class="criarComponente">
+            Eu criei um novo componente, chamado "event-binding",<br>
+            Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+            coloque esse comando <b>ng g c </b><span>*nome do componente que seja criar*</span>, dá "enter" e ele vai criar para você.<br>
+            Esse comando "ng g c" significa = <b>ng generate component</b>.<br>
+            <br>
+            <b>Atenção:</b> já coloque o componente criado para aparecer no template,<br>
+            para isso vai no componente <b>app.component.html</b>, adiciona o componente criado,<br>
+            <b>app-event-binding</b>, verifique se está aparecendo no template e vamos começar...<br>
+         </section>
+         <br>
+         É quando o usuário vai clicar num botão ou link e aciona um evento,<br>
+         vai ter uma ação, esse evento pode ser métodos, criados na classe.<br>
+         <br>
+         Vamos criar alguns exemplos, na classe do nosso componente, <br>
+         vai no <b>event-binding.component.ts</b> e adiciona essas propriedades:<br>
+         <br>
+            <b>
+               nome = "Giovani"; <br>
+               dataNascimento = "12/02/1989"; <br>
+               cidade = "Passa-Quatro, MG" <br>
+               idade = "38"; <br>
+            </b>
+         Veja como fica no código:<br>
+         <div class="imagem">
+               <img src="/assets/event-1.png" alt="print do código">
+         </div>
+         <br>
+         Agora vamos chamar esses dados do jeito normal,<br>
+         para isso use a <b>Interpolação de texto</b>,<br>
+         <br>
+         No componente <b>event-binding.component.html</b>, adiciona uma tag,<br>
+         "h3", dentro dele abra "chaves duplas", dentro delas coloque, <br>
+         a propriedade que foi criada na classe, exemplo : "nome", <br>
+         feche as "chaves duplas", feche o "/h3", faça para todas as propriedades.<br>
+         Veja a imagem do código:<br>
+         <div class="imagem">
+               <img src="/assets/event-2.png" alt="print do código">
+         </div>
+         <br>
+         E agora veja como fica na página:<br>
+         <br>
+            <h3>{{ nome }}</h3>
+            <h3>{{ dataNascimento }}</h3>
+            <h3>{{ cidade }}</h3>
+            <h3>{{ idade }}</h3>
+         <br>
+         Agora vamos usar o <b>Event Binding</b>, <br>
+         criando um botão que ai clicar vai mostrar a propriedade,<br>
+         acionando uma "janelinha" na página.<br>
+         <br>
+         Para isso tem que criar um método, na classe <b>event-binding.component.ts</b>,<br>
+         como está na imagem abaixo:<br>
+         <div class="imagem">
+               <img src="/assets/event-3.png" alt="print tela programa">
+         </div>
+         <br>
+         Já crie três métodos dentro da classe. <br>
+         <br>
+         Mostrar o nome:<br>
+         <div class="exemplo">
+               <button type="button" (click)="mostrarNome()">Nome</button>
+         </div>
+         Mostrar o nome mais a idade :<br>
+         <div class="exemplo">
+               <button type="button" (click)="mostrarNomeIdade()">Nome e a Idade</button>
+         </div>
+         Mostrar toda a informação:<br>
+         <div class="exemplo">
+               <button type="button" (click)="mostrarTudo()">Mostrar tudo</button>
+         </div>
+         <br>
+      </h2>
+   </div>
+</div>
+

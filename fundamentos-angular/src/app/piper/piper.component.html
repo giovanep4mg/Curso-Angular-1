@@ -1,0 +1,84 @@
+<!--Aula-Piper-->
+<div class="aula3">
+  <div class="description">
+      <h1 class="title">Usar o Pipe "|" para fazer formatações no texto</h1>
+      <h2>
+      <br>
+      <section class="criarComponente">
+        Eu criei um novo componente, chamado "piper",<br>
+        Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+        coloque esse comando <b>ng g c </b><span>*nome do componente que seja criar*</span>, dá "enter" e ele vai criar para você.<br>
+        Esse comando "ng g c" significa = <b>ng generate component</b>.<br>
+      </section>
+      <br>
+      No componente <b>piper.component.ts</b>, que é classe dele, adicionei a propriedade,<br>
+      <b>nome = "giovani";</b>,<br>
+      <b>dataNascimento = "11/08/1983" ;</b>,<br>
+      <b>dinheiro = 200000;</b>,<br>
+      E ao chamar essas propriedades no template adiciono o piper, para fazer as formatações.<br>
+      <br>
+      Você coloca o texto dentro das chaves duplas e o pipe, como está a imagem abaixo: <br>
+      <div class="imagem">
+          <img src="/assets/pipe.png" alt="print do programa">
+      </div>
+      <br>
+      Do lado do piper você passa a formatação que você quer que seja feita,<br>
+      vamos usar o <b>uppercase</b>, deixando todo texto com letras Maiúsculas.<br>
+      Como fica na página:<br>
+      <div class="exemplo" style="background-color: white;">
+          <!---Adiciona nome que está no componet.ts, com letra Maiúscula---->
+          <p>Nome: {{ nome | uppercase }}</p>
+      </div>
+      <br>
+      Você pode usar para fazer várias coisas,<br>
+      formatando a data de nascimento, para como nós usamos. <br>
+      Dentro do componente <b>piper.componet.ts</b>, foi adicionado uma data,<br>
+      dentro da propriedade <b>dataNascimento</b>, com os números invertidos,<br>
+      usando o "pipe" podemos formatar essa data quando for exibir no template.<br>
+      Como é o código, no programa:<br>
+      <div class="imagem">
+          <img src="/assets/data-an-form.png" alt="print do programa">
+      </div>
+      <br>
+      No <b>piper.component.html</b>, foi adicionado a propriedade, dentro das "chaves" duplas,<br>
+      mas com "pipe" usando o <b>data</b>, para fazer a formatação, como mostra a imagem:<br>
+      <div class="imagem">
+          <img src="/assets/forma-data.png" alt="print do programa">
+      </div>
+      <br>
+      Como fica na página:<br>
+      <div class="exemplo" style="background-color: white;">
+          <!---Adiciona data de nascimento que está no componet.ts, passando a formatação correta que deve aparecer------>
+          <p>Data de nascimento: {{ dataNascimento | date : "dd/MM/yyyy" }}</p>
+      </div>
+      <br>
+      <div>
+          <span style="color: blue;"> Converter número em dinheiro:</span><br>
+          Dentro do componente <b>piper.componet.ts</b>, <br>
+          adicionei a propriedade "dinheiro = 200000", <br>
+          e na hora de chamar no <b>piper.component.html</b>,<br>
+          dentro das "chaves duplas", adicionei a propriedade e <br>
+          usei o "pipe" <b>currency : "BRL"</b>,<br>
+          que já fez a formatação e adicinou o "R$, a vírgula e o ponto".<br>
+          Ficam assim, no template:<br>
+          <div class="exemplo" style="background-color: white;">
+              <p> {{ dinheiro |currency: "BRL" }}</p>
+          </div>
+      </div>
+      <br>
+      <div>
+          <span style="color: blue;"> Converter a data "11/08/1983" em TEXTO :</span><br>
+          Dentro do componente <b>piper.componet.ts</b>, <br>
+          adicionei a propriedade "dataNascimento = "11/08/1983", <br>
+          e na hora de chamar no <b>piper.component.html</b>,<br>
+          dentro das "chaves duplas", adicionei a propriedade e <br>
+          usei o "pipe" <b> date | uppercase</b>,<br>
+          que já fez a formatação da data em texto.<br>
+          Ficam assim, no template:<br>
+          <div class="exemplo" style="background-color: white;">
+              <p> {{ dataNascimento | date | uppercase }}</p>
+          </div>
+      </div>
+      </h2>
+  </div>
+</div>

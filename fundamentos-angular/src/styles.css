@@ -1,11 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+  margin: 2px;
+  padding: 2px;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: -30px;
+  padding: -20px;
+}
+.criarComponente{
+  border: 2px solid black;
+  margin: 3px;
+  padding: 3px;
+}
+.criarComponente span{
+  color: blue;
 }
 
 button {
   padding: 10px;
-  background-color: rgb(0, 72, 155);
+  background-color: rgb(0, 155, 47);
   color: white;
   border: none;
   font-weight: bold;
@@ -17,4 +31,17 @@ button {
 
 button:hover {
   filter: brightness(1.4);
+}
+.title{
+  color: blue;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 55px;
+}
+.description {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+b{
+  color: red;
 }
