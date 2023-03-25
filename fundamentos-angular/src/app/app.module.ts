@@ -23,6 +23,8 @@ import { InterpolacaoDeTextComponent } from './interpolacao-de-text/interpolacao
 import { PiperComponent } from './piper/piper.component';
 import { CarregarImagensComponent } from './carregar-imagens/carregar-imagens.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
     InterpolacaoDeTextComponent,
     PiperComponent,
     CarregarImagensComponent,
-    EventBindingComponent
+    EventBindingComponent,
+    HeaderComponent,
+    FooterComponent
 
   ],
   imports: [
