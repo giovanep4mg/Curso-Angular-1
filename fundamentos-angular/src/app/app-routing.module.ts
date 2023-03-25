@@ -7,6 +7,7 @@ import { InterpolacaoDeTextComponent } from './interpolacao-de-text/interpolacao
 import { PipeCustomizadoComponent } from './pipe-customizado/pipe-customizado.component';
 import { PiperComponent } from './piper/piper.component';
 import { PrimeiroComponenteComponent } from './primeiro-componente/primeiro-componente.component';
+import { RenderizandoListasComponent } from './renderizando-listas/renderizando-listas.component';
 import { SgundoComponentComponent } from './sgundo-component/sgundo-component.component';
 import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'carregar-imagens', component:CarregarImagensComponent},
   {path:'event-binding', component:EventBindingComponent},
   {path:'two-way-data-binding', component:TwoWayDataBindingComponent},
+  {path:'renderizando-listas', component:RenderizandoListasComponent},
 ];
 
 @NgModule({

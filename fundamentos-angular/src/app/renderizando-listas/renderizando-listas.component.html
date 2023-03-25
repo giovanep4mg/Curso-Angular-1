@@ -1,13 +1,98 @@
-<h1>Inicio Renderizando Lista</h1>
-<h2>Renderizando uma lista de dados</h2>
-<ul class="lista-produtos">
-  <li *ngFor="let celular of celulares">
-      <strong>{{celular.nome}}</strong>
-      <p>{{celular.descricao}}</p>
+<!---Coisas que serão exibidas na página--->
+<div id="todaPagina">
+  <div class="aula">
+      <div class="description">
+          <h1 class="title">Renderizando Listas</h1>
+        <h2>
+          <section class="criarComponente">
+            Eu criei um novo componente, chamado "renderizando-listas",<br>
+            Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+            coloque esse comando <b>ng g c </b><span>*nome do componente que seja criar*</span>, dá "enter" e ele vai criar para você.<br>
+            Esse comando "ng g c" significa = <b>ng generate component</b>.<br>
+            <br>
+            <b>Atenção:</b> já coloque o componente criado para aparecer no template,<br>
+            para isso vai no componente <b>app.component.html</b>, adiciona o componente criado,<br>
+            <b>app-renderizando-listas</b>, verifique se está aparecendo no template e vamos começar...<br>
+         </section>
+         <br>
+          Nessa aula vamos ver como renderizar uma lista, usar diretivas, mostrar ou não elementos dessa lista.<br>
+          <br>
+          Criar uma tipagem, interface.<br>
+          Depois de criado o componente "renderizando-listas", vai no componente,<br>
+          <b>app</b>, e cria uma tipagem, clica emcima do <b>app</b>, escolha criar uma nova pasta,<br>
+          dentro da pasta escolha criar novo arquivo, coloque o nome de:<br>
+          <b>celular.ts</b>, e dentro dele irá exporta a interface:<br>
+          Veja como é o código na imagem abaixo:<br>
+          <div class="imagem">
+              <img src="/assets/renderizar-listas-1.png" alt="print do código" style="width: -webkit-fill-available;">
+          </div>
+          <b>atenção:</b>O sinal "?" depois da palavra descrição, significa que não é obrigatório colocar,<br>
+          a descrição do produto, a descrição será opcional.<br>
+          <br>
+          <br>
+          Agora no componente <b>renderizando-listas.comonent.ts</b>, na classe,<br>
+          crie uma propriedade com o nome:<br>
+          <b>celulares</b> que vai receber um vetor "lista", com o nome de <b>Celular [] = [</b>,<br>
+          ai você cria a lista de celular, com "id", "nome", "descrição", "esgotado", como na imagem abaixo:<br>
+          <div class="imagem">
+              <img src="/assets/renderizar-listas-2.png" alt="print do código">
+          </div>
+          <br>
+          Agora para mostrar essa lista, vai no componente <b>renderizando-listas.component.html</b>,<br>
+          dentro dele adicione essas tags:<br>
+          "h2" só para criar um titulo e fecha o "/h2",<br>
+          "ul" para criar uma lista, dentro dele<br>
+          "li" para cada celular um 'li', mas para isso usamos o "*ngFor<br>
+          dentro dessa "li", vai usar um diretiva <b>*ngFor="let Celular of celulares</b>,<br>
+          que para cada "li", terá um celular e será mostrado:<br>
+          crie uma tag "strong", dentro dela "chaves duplas", dentro delas:<br>
+          <b>Celular.nome</b>, fecha a tag "/strong", abaixo crie um ,<br>
+          "p" dentro dele "chaves duplas" dentro delas <b>Celular.descricao</b>, fecha o "/p"<br>
+          <br>
+          crie um "span", chaves duplas e dentro delas adicione:<br>
+          <b>Celular.esgotado ? 'esgotado' :  'disponivel'</b>, está fazendo uma pergunta para a lista,<br>
+          o celular está esgotado?, se estiver "true" lá na classe, vai mostrar "esgotado",<br>
+          se estiver "false" na classe a mensagem será "disponivel".<br>
+          Veja como fica o código na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="/assets/renderizar-listas-3.png" alt="print do código">
+          </div>
+          <br>
+          <br>
+          Podemos também adicionar uma mudança de cor quando estiver: "esgotado" ou "disponivel", <br>
+          tem que criar uma classe no componente <b>renderizando-listas.component.css</b>
+          para fazer a troca de cores ou outras coisas, quando o esgotado for verdadeiro,<br>
+          como na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="/assets/renderizar-listas-4.png" alt="print do código">
+          </div>
+          <br>
+          para isso acrescente a diretiva <b>ngClass</b> dentro da tag "span",<br>
+          "span <b>[ngClass]="Celular.esgotado ? 'esgotado' : '' "</b><br>
+          se estiver esgotado vai adiciona o "CSS", criado para a classe "esgotado",<br>
+          veja como fica o código agora:<br>
+          <div class="imagem">
+            <img src="/assets/renderizar-listas-5.png" alt="print do código">
+          </div>
+          <br>
+          Agora finalizou, veja como fica o resultado no template, na página:<br>
+          <br>
+        </h2>
+      </div>
+      <div class="exemplo">
+        <h2>Renderizando uma lista de dados</h2>
+          <ul class="lista-produtos">
+            <li *ngFor="let Celular of celulares">
+              <strong> {{ Celular.nome }} </strong  >
+              <p> {{ Celular.descricao }} </p >
 
-      <!--if = aparecer mensagem se celular for true "esgotado", se for false "diponivel"------>
-      <!--ngClass, vai mudar o style se o cel estiver esgotado ou não---->
-      <span [ngClass]="celular.esgotado ? 'esgotado' : '' ">{{celular.esgotado? "esgotado" : "disponivel"}} </span>
-  </li>
-</ul>
-<h1>Final Renderizando Lista</h1>
+                <span [ngClass]="Celular.esgotado ? 'esgotado' : '' ">
+                  {{ Celular.esgotado ? "esgotado" : "disponivel" }}
+                </span>
+
+            </li>
+          </ul>
+      </div>
+  </div>
+</div>
+
