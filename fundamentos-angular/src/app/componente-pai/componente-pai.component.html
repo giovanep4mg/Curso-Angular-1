@@ -1,10 +1,164 @@
-<!---titulo---->
-<h1>Inicio Classe Pai</h1>
-<h2>Interação entre componentes</h2>
-<!----texto---->
-<h3>O sobrenome está definido no elemento pai: {{sobrenome}}</h3>
-<h3>O nome completo é {{filho.nome}} {{sobrenome}}</h3>
+<div class="aula">
+    <div class="description">
+    <h1 class="title">Interação entres os Componentes " Pai e Filho "</h1>
+        <h2>
+        <br>
+        <section class="criarComponente">
+            Eu criei dois novos componentes, chamado "componente-pai" e "componente-filho",<br>
+            Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+            coloque esse comando <b>ng g c </b><span>*nome do componente que seja criar*</span>, dá "enter" e ele vai criar para você.<br>
+            Esse comando "ng g c" significa = <b>ng generate component</b>.<br>
+            <br>
+            <b>Atenção:</b> já coloque o componente criado para aparecer no template,<br>
+            para isso vai no componente <b>app.component.html</b>, adiciona o componente criado,<br>
+            aqui iremos adicionar somente o componente pai <b>app-componente-pai</b>, <br>
+            verifique se está aparecendo no template e pronto.<br>
+        </section>
+        <br>
+          Depois de criar os dois comonentes, vai no componente pai <b>componente-pai.component</b>,<br>
+          adiciona a propriedade <b>sobrenome =" da Silva "</b>.<br>
+          Como está na imagem abaixo:<br>
+          <div class="imagem">
+              <img src="/assets/pai-filho-1.png" alt="print do código">
+          </div>
+          <br>
+          Como passar essa propriedade que está no pai para o componente filho,<br>
+          <br>
+          vai no componente <b>componente-pai.component.html</b>, e coloca isso:<br>
+          uma tag "h2", só para ter um titulo, feche o "/h2",<br>
+          adicione um "h3", dentro dele coloque um texto:<br>
+          "O sobrenome está definido no elemento pai: <br>
+          *use as chaves duplas para colocar a propriedade do 'sobrenome'*"<br>
+          <br>
+          E também chame o componente filho adicionando o comando,<br>
+          <b>app-componente-*filho*</b> sem os "asteriscos".<br>
+          Como está na imagem:<br>
+          <div class="imagem">
+              <img src="/assets/pai-filho-5.png" alt="print do código">
+          </div>
+          <br>
+          Agora vai no componente filho <b>componente-filho.component.ts</b>,<br>
+          para receber os dados do componente pai, dentro da classe você coloca:<br>
+          o decorador <b>@Input()</b>, que é para inserir informações dentro desse componente,<br>
+          coloque o "@Input()" a propriedade "sobrenome = ' ' " que vai está vazia.<br>
+          Como está na imagem abaixo:<br>
+          <div class="imagem">
+              <img src="/assets/pai-filho-2.png" alt="print do código">
+          </div>
+          <br>
+          Agora vamos editar o componente filho, vai no <b>componente-filho.component.html</b>,<br>
+          coloque a tag "label" for="nome", com o texto = 'Digite o nome:', feche a "/label",<br>
+          coloque um "input" do tipo "text", com id = 'nome', e adiciona o two-way-data-bindng ,<br>
+          <b>[(ngModel)]="nome"</b>, vai acusar um erro por que não tem a propriedade "nome" <br>
+          Como está na imagem abaixo:<br>
+          <div class="imagem">
+              <img src="/assets/pai-filho-3.png" alt="print do código">
+          </div>
+          <br>
+          Agora vamos adicionar essa propriedade no <b>componente-filho.component.ts</b>, <br>
+          só adicionar ela lá e dizer que vai inicializar vazia " nome = '' ".<br>
+          <br>
+          Vamos vê se está conseguindo mostrar o "sobrenome" que veio do elemento pai,<br>
+          para isso vai no <b>componente-filho.component.html</b>, e acrescenta a tag:<br>
+          "h3" com o texto = " O sobrenome veio do elemento Pai *coloque as chaves duplas*",<br>
+          dentro das chaves duplas você coloca a propriedade "sobrenome" .<br>
+          Como está na imagem abaixo:<br>
+          <div class="imagem">
+              <img src="/assets/pai-filho-4.png" alt="print do código">
+          </div>
+          <br>
+          Agora vai componente <b>componente-pai.component.html</b>, e dentro da tag<br>
+          "app-componente-filho" acrescente a diretiva <b>[sobrenome]="sobrenome"</b>
+          Como está na imagem abaixo:<br>
+          <div class="imagem">
+              <img src="/assets/pai-filho-6.png" alt="print do código">
+          </div>
+          <br>
+          Como fica na página:<br>
+          <div class="exemplo" style="border: 3px solid black;">
+              <h2>Interação entre componentes</h2>
+              <h3>O sobrenome está definido no elemento pai: {{sobrenome}}</h3>
+              <app-componente-filho [sobrenome]="sobrenome"></app-componente-filho>
+          </div>
+          <br>
+          <span class="title">Agora vamos fazer o "filho" passar uma propriedade para o pai.</span>
+          <br>
+          No pai <b>componente-pai.component.html</b> adicione uma tag "h3",<br>
+          dentro dessa tag, coloque esse texto " O nome completo é *chaves duplas* *chaves duplas* ",<br>
+          dentro dessas chaves duplas você vai colocar,"nome" e "sobrenome".<br>
+          Para obter essa informação do elemento filho, pode ultilizar uma variável de template,<br>
+          o nome da variável será "#filho" e assim terá acesso a toda propriedade,<br>
+          Como está o código na imagem abaixo:<br>
+          <div class="imagem">
+              <img src="/assets/pai-filho-7.png" alt="print do código">
+          </div>
+          <br>
+          Como fica na página:<br>
+          <div class="exemplo" style="border: 3px solid black;">
+              <h2>Interação entre componentes</h2>
+              <h3>O sobrenome está definido no elemento pai: {{sobrenome}}</h3>
+              <h3>O nome completo é {{filho.nome}} {{sobrenome}}</h3>
+              <app-componente-filho [sobrenome]="sobrenome" #filho  ></app-componente-filho>
+          </div>
+          <br>
+          <span class="title"> " @Output " emitir ou disparar eventos no elemento pai</span>
+          <br>
+          No componente pai <b>componente-pai.component.ts</b> defina um método.<br>
+          Um método que vai mostrar o nome completo, naquela "janelinha" de aviso, <br>
+          <br>
+          <b>mostrarNomeCompleto(nomeCompleto: any)</b>, abre a chave,<br>
+          <br>
+          <b>alert(`O nome completo é:  $"nomeCompleto" );</b><br>
+          <br>
+          fecha a "chave".<br>
+          Veja como fica o código na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="/assets/pai-filho-8.png" alt="print do código">
+          </div>
+          <br>
+          Vai disparar esse método que está no elemento Pai, pelo elemento Filho para isso,<br>
+          vai no componente <b>componente-pai.component.html</b>, tem que passar esse evento para ele<br>
+          dentro da tag "app-componente-filho", adiciona o evento:<br>
+          <br>
+          coloque "()" dentro dela o nome que você quiser, eu coloquei 'mostraNome',<br>
+          e passa qual é a função que será executada "mostrarNomeCompleto()",<br>
+          precisar passar alguma coisa dentro "()", usa o <b>$event</b>. <br>
+          Veja como fica o código na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="/assets/pai-filho-9.png" alt="print do código">
+          </div>
+          <br>
+          <br>
+          No elemento filho <b>componente-filho.component.ts</b>, defina o "@Output",<br>
+          <b>@Output()</b> e nome dele tem que ser o nome da função/evento que está sendo atrelado,<br>
+          <b>mostraNome</b> e ele será um <b>new EventEmitter()</b>
+          Veja como fica o código na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="/assets/pai-filho-10.png" alt="print do código">
+          </div>
+          <br>
+          Agora vamos adicionar um botão, no componente <b>componente-filho.component.html</b>,<br>
+          tag "button" do type='button', com o texto = "Mostrar nome completo",<br>
+          dentro da tag, adicione um evento de click, colocando o nome do evento:<br>
+          <b>(click)="mostrarnome.emit()"</b>, e dentro do parentes, passe o que você quer:<br>
+          <b>( nome + ' ' + sobrenome )</b>,<br>
+          Veja como fica o código na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="/assets/pai-filho-11.png" alt="print do código">
+          </div>
+          <br>
+          Como fica na página:<br>
+          <div class="exemplo" style="border: 3px solid black;">
+              <h2>Interação entre componentes</h2>
+              <h3>O sobrenome está definido no elemento pai: {{sobrenome}}</h3>
+              <h3>O nome completo é {{filho.nome}} {{sobrenome}}</h3>
+              <app-componente-filho [sobrenome]="sobrenome"
+                  #filho
+                  (mostrarnome)="mostrarNomeCompleto ($event)">
+              </app-componente-filho>
+          </div>
+          <br>
+        </h2>
+    </div>
+</div>
 
-<!--#filho é para ter acesso aos componentes, vai pode pegar  o nome do comp filho------>
-<app-componente-filho [sobrenome]="sobrenome" (mostrarnome)="mostrarNomeCompleto ($event)"  #filho ></app-componente-filho>
-<h1>Final Classe Pai</h1>

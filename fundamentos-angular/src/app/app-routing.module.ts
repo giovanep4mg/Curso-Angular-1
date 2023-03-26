@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularComponent } from './angular/angular.component';
 import { CarregarImagensComponent } from './carregar-imagens/carregar-imagens.component';
+import { ComponentePaiComponent } from './componente-pai/componente-pai.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { InterpolacaoDeTextComponent } from './interpolacao-de-text/interpolacao-de-text.component';
+import { PersonalizadoComponent } from './personalizado/personalizado.component';
 import { PipeCustomizadoComponent } from './pipe-customizado/pipe-customizado.component';
 import { PiperComponent } from './piper/piper.component';
 import { PrimeiroComponenteComponent } from './primeiro-componente/primeiro-componente.component';
@@ -24,6 +26,8 @@ const routes: Routes = [
   {path:'event-binding', component:EventBindingComponent},
   {path:'two-way-data-binding', component:TwoWayDataBindingComponent},
   {path:'renderizando-listas', component:RenderizandoListasComponent},
+  {path:'personalizado', component:PersonalizadoComponent},
+  {path:'interacao-componentes', component:ComponentePaiComponent},
 ];
 
 @NgModule({

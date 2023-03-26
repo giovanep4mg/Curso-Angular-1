@@ -6,8 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./componente-pai.component.css']
 })
 export class ComponentePaiComponent {
+
+
   //variável
   sobrenome = "da Silva";
+
+
 
     //metodo, para mostrar uma janelinha que exibirá o nome completo
     mostrarNomeCompleto(nomeCompleto: any){

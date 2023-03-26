@@ -1,5 +1,57 @@
-<h1>Inicio Componentes Personalizados</h1>
+<div class="aula">
+   <div class="description">
+   <h1 class="title">Componente Personalizado</h1>
+    <h2>
+    <br>
+    <section class="criarComponente">
+        Eu criei um novo componente, chamado "personalizado",<br>
+        Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+        coloque esse comando <b>ng g c </b><span>*nome do componente que seja criar*</span>, dá "enter" e ele vai criar para você.<br>
+        Esse comando "ng g c" significa = <b>ng generate component</b>.<br>
+        <br>
+        <b>Atenção:</b> já coloque o componente criado para aparecer no template,<br>
+        para isso vai no componente <b>app.component.html</b>, adiciona o componente criado,<br>
+        <b>app-personalizado</b>, verifique se está aparecendo no template e pronto.<br>
+        </section>
+        <br>
+        Agora que já foi criado o componente, vai na classe <b>personalizado.comonent.ts</b>,<br>
+        adiciona um "decorador de input" <b>@Input()</b>, e ai você defini qual propriedade quer usar,<br>
+        coloquei <b>nome = "" ; </b> vai iniciar vazio, adiciona outra propriedade,<br>
+        adiciona um "decorador de input" <b>@Input()</b>, dessa vez a propriedade será <b>sobrenome = ""; </b>,<br>
+        que também se iniciará vazia.<br>
+        Veja como fica o código:<br>
+        <div class="imagem">
+            <img src="/assets/personalizado-1.png" alt="print do código">
+        </div>
+        <br>
+        Para fazer ele aparecer na página, vai no <b>app.component.html</b> .<br>
+        E no <b>app-personalizado</b>, você passa as  informações dentro da tag dele,<br>
+        você adiciona a propriedade que foi criada na classe,<br>
+        e passa o "valor", o que você quer que essa propriedade tenha.<br>
+        Como está na imagem do código abaixo:<br>
+        <div class="imagem">
+            <img src="/assets/personalizado-2.png" alt="print do código">
+        </div>
+        <br>
+        Só modifiquei o "css", para quando for aparecer seja destacado.<br>
+        Veja como fica na página:<br>
+        <div class="exemplo">
+          <p> João da Silva</p>
+        </div>
+        <br>
+        pode reutilizar esse componente, mudando somente o nome e sobrenome,<br>
+        vou mudar o nome = "Maria" e deixar o sobrenome do mesmo jeito.<br>
+        exemplo na página:<br>
+        <div class="exemplo">
+          <p> Maria da Silva</p>
+        </div>
+        <br>
+        <br>
+    </h2>
+</div>
+</div>
 
-<p>{{nome}} {{sobrenome}}</p>
 
-<h1>Final Componentes Personalizados</h1>
+
+
+

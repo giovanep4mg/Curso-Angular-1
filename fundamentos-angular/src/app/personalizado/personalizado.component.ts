@@ -6,6 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./personalizado.component.css']
 })
 export class PersonalizadoComponent {
+
   @Input() nome = "";
+
   @Input() sobrenome = "";
+
 }

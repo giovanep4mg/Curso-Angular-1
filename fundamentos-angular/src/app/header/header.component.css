@@ -36,12 +36,17 @@
   font-size:60px;
 }
 
+.navegar{
+  display:contents;
+}
+
 .ul{
-  display: flex;
-  justify-content: flex-end;
+  display: inline-flex;
+  display: -webkit-box;
 }
 li{
  background-color: rgba(165, 42, 42, 0.164);
+
 
 }
 li:hover{
@@ -74,6 +79,4 @@ li a:hover {
     flex: 1;
 }
 
-.navegar{
-  display: flex;
-}
+

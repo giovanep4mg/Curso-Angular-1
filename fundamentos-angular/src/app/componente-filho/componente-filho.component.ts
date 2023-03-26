@@ -7,11 +7,17 @@ import { EventManager } from '@angular/platform-browser';
   styleUrls: ['./componente-filho.component.css']
 })
 export class ComponenteFilhoComponent {
+
+
   //para inserir
   @Input() sobrenome = "";
 
+
+
   //emitir,disparar eventos que estão no pai
   @Output() mostrarnome = new EventEmitter();
+
+
 
   //variável
   nome = "";
