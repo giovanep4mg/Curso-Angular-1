@@ -1,9 +1,76 @@
+<!--Aula-CarregarImagem-->
+<div class="aula">
+  <div class="description">
+  <h1 class="title">Ng Content</h1>
+    <h2>
+    <br>
+      Primeiro:<br>
+      <section class="criarComponente">
+        Eu criei um novo componente, chamado "card",<br>
+        Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+        coloque esse comando <b>ng g c </b><span>*nome do componente que deseja criar*</span>, dá "enter" e ele vai criar para você.<br>
+        Esse comando "ng g c" significa = <b>ng generate component</b>.<br>
+      </section>
+      <br>
+      Para reutilizar códigos, quando precisa adicionar componentes dentro de outros componentes.<br>
+      Você criou vários componentes, como foi feito até agora, ai podemos separar eles, colocando um titulo, uma borda,<br>
+      É isso que iremos fazer mas sem precisar fazer para todos, para não ter muito trabalho.<br>
+      <br>
+      Vamos criar como se fosse uma capa, para todos os componentes, onde só adiciona um titulo e uma cor,<br>
+      os estilos serão adicionados somente uma vez e depois todos os componentes irão conter eles.<br>
+      <br>
+      Vamos começar!<br>
+      Depois de criado o novo componente <b>card</b>, vai na classe dele <b>card.component.ts</b>,<br>
+      adiciona as propriedades que ele vai receber:<br>
+      <br>
+      <b>@Input() titulo = " " ;</b> => que vai receber a propriedade "titulo", e inicializa vazia.<br>
+      <b>@Input() cor = " " ;</b> => que vai receber a propriedade "cor", e inicializa vazia.<br>
+      Veja como fica o código na imagem abaixo:<br>
+      <div class="imagem">
+          <img src="/assets/card-1.png" alt="print do código">
+      </div>
+      <br>
+      <br>
+      Agora vai no componente <b>card.component.html</b>, e adiciona essas tags:<br>
+      <br>
+      <b>div com a classe = "container" </b> dentro dessa div vamos usar uma diretiva:<br>
+      <b>[ngStyle]="  *'background-color': cor * "</b> no lugar dos asteriscos usa uma chave.<br>
+      <b>h2 dentro dela = duas chaves duplas</b> dentro delas escreva <b>titulo</b>, feche o "h2"<br>
+      <b>div  com a classe = "content" </b> dentro dela coloque a tag:<br>
+      <b>ng-content</b><br>
+      <br>
+      <b>feche as divs</b>
+      Veja como fica o código na imagem abaixo:<br>
+      <div class="imagem">
+          <img src="/assets/card-2.png" alt="print do código">
+      </div>
+      <br>
+      Agora vai no componente <b>app.component.html</b>, que é onde adicionamos os comonentes,<br>
+      que criamos para aparecer na página.<br>
+      E coloque os componentes que criamos dentro desse componente.<br>
+      Você passa um titulo, e uma cor neste caso a cor tem que usar o "#" e os números e letras.<br>
+      <br>
+      <b>app-card titulo=" *** " cor="#****"</b> <br>
+          <b>app-two-way-data-bindingapp-two-way-data-binding</b> <br>
+      <b> app-card</b> <br>
+      Veja como fica o código na imagem abaixo:<br>
+      <div class="imagem">
+          <img src="/assets/card-3.png" alt="print do código">
+      </div>
+      <br>
+      <br>
+      Veja como ficaria na página:<br>
+      <div class="imagem" style="border: 3px solid black;">
+        <img src="/assets/card-4.png" alt="print do código">
+      </div>
+      <br>
+      Vai colocar todos os componentes criados, separados por uma borda e cores diferentes,<br>
+      esses estilos já foram configurados antes no <b>card.cpmponent.css</b>,<br>
+      deixando tudo mais bonito e em ordem.<br>
+      </h2>
+  </div>
+<div>
 
-<!--Vai colocar as div dentro dessa div, com uma borda, um titulo e uma cor definida na hora de colocar ela aqui dentro------>
 
-<div class="container" [ngStyle]="{'background-color': cor}">
-  <h2>{{ titulo }}</h2>
-    <div class="content">
-      <ng-content></ng-content>
-    </div>
-</div>
+
+

@@ -6,6 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
+
   @Input() titulo =" ";
-  @Input() cor = "#3445ee";
+
+  @Input() cor = "";
+
 }

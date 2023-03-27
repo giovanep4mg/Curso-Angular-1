@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularComponent } from './angular/angular.component';
+import { CardComponent } from './card/card.component';
 import { CarregarImagensComponent } from './carregar-imagens/carregar-imagens.component';
 import { ComponentePaiComponent } from './componente-pai/componente-pai.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:'renderizando-listas', component:RenderizandoListasComponent},
   {path:'personalizado', component:PersonalizadoComponent},
   {path:'interacao-componentes', component:ComponentePaiComponent},
+  { path: 'card', component:CardComponent},
 ];
 
 @NgModule({

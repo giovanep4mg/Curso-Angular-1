@@ -25,6 +25,7 @@ import { CarregarImagensComponent } from './carregar-imagens/carregar-imagens.co
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ExemploNgContentComponent } from './exemplo-ng-content/exemplo-ng-content.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { FooterComponent } from './footer/footer.component';
     CarregarImagensComponent,
     EventBindingComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ExemploNgContentComponent
 
   ],
   imports: [
