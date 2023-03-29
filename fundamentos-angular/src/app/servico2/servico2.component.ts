@@ -13,6 +13,7 @@ export class Servico2Component {
 
   adicionarProdutos() {
     this.logger.logar(`O produto com a descrição ${this.descricao} foi adicionado`);
+    alert("A descrição do produto é : "+this.descricao);
   }
 
 

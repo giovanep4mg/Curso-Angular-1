@@ -15,6 +15,7 @@ export class LoggerService {
 
       exibeTodosOsLogs(){
         console.log(this.mensagens);
+        alert("Os dados adicionado foram : "+this.mensagens);
       }
 
 }

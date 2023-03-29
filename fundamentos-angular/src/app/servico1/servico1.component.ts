@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./servico1.component.css']
 })
 export class Servico1Component {
-  //variável
+
+  //propriedade
   nome = "";
 
 
@@ -16,5 +17,6 @@ export class Servico1Component {
   //metodo
   adicionarNome(){
     this.logger.logar(`O nome ${this.nome} foi adicionado`);
+    alert("O nome é : "+this.nome);
   }
 }

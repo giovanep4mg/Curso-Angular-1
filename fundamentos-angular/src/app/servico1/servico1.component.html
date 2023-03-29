@@ -1,10 +1,198 @@
-<h1>Inicio Serviços 1</h1>
-<!---titulo-->
-<h2>Serviço 01</h2>
-<!--Campo de texto, que vai receber dados e salvar na variável nome--->
-<label for="nome">Digite seu nome:</label>
-<!--pega o que foi digitado e salva na variável nome----->
-<input type="text" [(ngModel)]="nome">
-<!---Aciona o metodo quando clicar nese botão---->
-<button type="button" (click)="adicionarNome()" >Adicionar nome</button>
-<h1>Final Serviços 1</h1>
+<div class="aula">
+  <h1 class="title">Serviços</h1>
+  <div class="description">
+      <h2>
+        <section class="criarComponente">
+          Eu criei um novo componente, chamado "servico1",<br>
+          Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+          coloque esse comando <b>ng g c</b><span>*nome do componente que deseja criar*</span>, dá "enter"<br>
+           e ele vai criar para você.<br>
+          Esse comando "ng g " significa = <b>ng generate component </b>.<br>
+        </section>
+        <br>
+        Service é uma funcionalidade que pode ser reutilizada em diversos componentes.<br>
+        <br>
+        Depois de criar o componente, vai no <b>servico1.component.html</b>, e adiciona essas tags:<br>
+        <br>
+        <b>h2</b> um titulo 'Serviço 01', feche o <b>/h2</b>>.<br>
+        <b>label for= "nome"</b>, com o texto "Digite seu nome ", fecha a <b>/label</b>>.<br>
+        <b>input type="text" [(ngModel)]="nome"</b>, vai dá erro porque não tem a propriedade "nome".<br>
+        <b>button type="button" (click)="adicionarNome()"</b> :"Adicionar nome", feche a tag <b>/button</b>.<br>
+        Veja como fica o código:<br>
+        <div class="imagem">
+          <img src="/assets/service-1.png" alt="print do código">
+        </div>
+        <br>
+        Agora vamos adicionar a propriedade "nome" e criar o método "adicionarNome".<br>
+        <br>
+        Vai no componente <b>servico1.component.ts</b>, e adiciona dentro da classe :<br>
+        <b>nome = "" ;</b> propriedade nome que vai está vazia.<br>
+        <br>
+        Agora vamos adicionar o método:<br>
+        <b>adicionarNome() *</b> no lugar do asterisco é uma chave aberta.<br>
+        <b>consolo.log(`O nome $ * this.nome * foi adicionado`);</b> <br>
+        Veja como fica o código:<br>
+        <div class="imagem">
+          <img src="/assets/service-2.png" alt="print do código">
+        </div>
+        <br>
+        Para fazer esse componente aparecer na página, vai no <b>app.component.html</b>,<br>
+        adiciona ele lá <b>*app-servico1 ** /app-servico1 * </b> .<br>
+        <br>
+        Agora verifque na página se está adicionando o "nome",<br>
+        para isso clique em "F12" ou sobre a página aberta, clique com o botão direito do mouse,<br>
+        e escolha "inspecionar a página", clique no console, e veja se será adicionado o "nome",<br>
+        quando você clicar no botão.<br>
+        Veja como fica na página:<br>
+        <div class="imagem">
+          <img src="/assets/service-3.png" alt="print do código">
+        </div>
+        <br>
+        <br>
+        <b>Usar essa mesma função em outro componente</b>
+        <br>
+        <br>
+        Para isso crie outro componente, <b>ng g c servico2</b>.<br>
+        Depois de criar, vai no componente <b>servico2.component.html</b> e adiciona essas tags:<br>
+        <br>
+        <b>h2</b> "servico 02" <b>/h2</b> <br>
+        <b>label for="descrição"</b> "Digite a descrição do produto" <b>/label</b> <br>
+        <b>input type="text" [(ngModel)]="descricao"</b> <br>
+        <b>button type="button" (click)="adicionarProdutos()"</b> "Adicionar produtos" <b>/button</b> <br>
+        <br>
+        Veja como fica o código:<br>
+        <div class="imagem">
+          <img src="/assets/service-3.png" alt="print do código">
+        </div>
+        <br>
+        Agora vai no componente <b>servico2.component.ts</b> e adiciona,<br>
+        a proriedade "descrição" e o método, que é praticamente igual ao outro servico1.<br>
+        <br>
+        propriedade <b>descricao = "";</b>, depois na classe o método,<br>
+        <b>adicionarProdutos()</b><br>
+        <b>console.log(`O produto com a descrição $*this.descricao* foi adicionado`);</b> <br>
+        Veja como fica o código:<br>
+        <div class="imagem">
+          <img src="/assets/service-4.png" alt="print do código">
+        </div>
+        <br>
+        <br>
+        Agora veja como fica na página, se está tudo certo,<br>
+        <div class="imagem">
+          <img src="/assets/service-5.png" alt="print do código">
+        </div>
+        <br>
+        <br>
+        As funçoes são a mesma, e para tratar essas funcões vou cria um "serviço".<br>
+        <br>
+        No pront de comando, crie um service:<br>
+        <b>ng g service logger</b>, clique em enter. <br>
+        <br>
+        Depois de criado vai no <b>logger.service.ts</b><br>
+        dentro dele pode ser implementada todas as funcionalidades,<br>
+        <b> decorator = @Injectable</b> que é para poder injetar esse serviço em nossos componentes.<br>
+        <br>
+        Dentro da classe vamos criar uma função:<br>
+        <b>logar(mensagem:string)</b> que vai receber uma mensagem.<br>
+        <b>console.log(mensagem);</b> e vai mostrar no console.<br>
+        <br>
+        Já vamos criar tambem uma lista, "vetor" de mensagens.<br>
+        <b>mensagens: String[] = [];</b> <br>
+        <br>
+        No método "logar", adicione esse código, para que toda vez que logar,<br>
+        vai adicionar a mensagem dentro do "vetor" da lista.<br>
+        <b>this.mensagens.push(mensagem);</b>
+        Agora veja como fica o código:<br>
+        <div class="imagem">
+          <img src="/assets/service-6.png" alt="print do código">
+        </div>
+        <br>
+        <br>
+        Depois vamos adicionar outro método "exibirTodosOsLogs()",<br>
+        que vai mostrar no console todas as mensagens:<br>
+        <b>exibeTodosOsLogs()</b> abre chaves,<br>
+        <b>console.log(this.mensagens);</b>, fecha as chaves.<br>
+        <br>
+        Agora veja como fica o código:<br>
+        <div class="imagem">
+          <img src="/assets/service-7.png" alt="print do código">
+        </div>
+        <br>
+        <br>
+        <b>Agora vamos ultilizar esse serviço com esses métodos nos componentes</b>
+        <br>
+        <br>
+        Vai no serviço1, componente <b>servico1.component.ts</b>, <br>
+        vamos injetar nosso "serviço" dentro desse componete.<br>
+        <br>
+        Tem que criar o <b>constructor</b> e injeta dentro dele,<br>
+        <b>constructor(private logger: LoggerService)</b>.<br>
+        Agora já posso usar os métodos criado no "serviço".<br>
+        <br>
+        No método "adicionarNome", vou modificar o código:<br>
+        <b>this.logger.logar(`O nome $ * this.nome * foi adicionado`);</b>
+        <br>
+        Agora veja como fica o código:<br>
+        <div class="imagem">
+          <img src="/assets/service-8.png" alt="print do código">
+        </div>
+        <br>
+        Faça o mesmo com o <b>servico2</b>, só adicionar o <b>constructor</b>,<br>
+        passar os parâmetros "private logger: LoggerService" e modificar o método,<br>
+        <b>this.logger.logar(`O nome $ * this.nome * foi adicionado`);</b>
+        <br>
+        E para finalizar vamos adicionar o método "exibir todos os logs",<br>
+        que vai mostrar os dois logs "nome do produto e descrição dele".<br>
+        <br>
+        Para isso, no componente <b>servico2.component.html</b>, adicione:<br>
+        <b>button type="button" (click)="this.logger.exibeTodosOsLogs()"</b><br>
+        com o texto = "Exibe todos os Logs", e feche o "/button".<br>
+        <br>
+        <br>
+        Agora verifque na página se está adicionando o "nome", "produto" e se "exibi tudo",<br>
+        para isso clique em "F12" ou sobre a página aberta, clique com o botão direito do mouse,<br>
+        e escolha "inspecionar a página", clique no console, depois clique nos botões <br>
+        e veja se está adicionando e depois exibindo tudo.<br>
+        Veja como fica na página:<br>
+        <div class="imagem">
+          <img src="/assets/service-9.png" alt="print do código">
+        </div>
+        <br>
+        <br>
+        Adicionei nas classes um "alert", aquela janelinha,<br>
+        para não precisar olhar no console, ao clicar no botão ,<br>
+        já irá exibir a mensagem do que está sendo adicionado.<br>
+        <br>
+        Para fazer isso, basta adicionar os códigos:<br>
+        <br>
+        No componente "servico1.component.ts" : <br>
+        <b>alert("O nome é : "+this.nome);</b> no método "adicionarNome".<br>
+        <br>
+        No componente "servico2.component.ts":<br>
+        <b>alert("A descrição do produto é : "+this.descricao);</b> no método "adicionarProdutos".<br>
+        <br>
+        No componente "logger.service.ts":<br>
+        <b>alert("Os dados adicionado foram : "+this.mensagens);</b> , no método "exibeTodosOsLogs" .<br>
+        <br>
+        <br>
+        Pronto, encerramos essa aula!<br>
+        <br>
+      </h2>
+  </div>
+  <div class="exemplo">
+    <!---titulo-->
+    <h2>Serviço 01</h2>
+        <!--Campo de texto, que vai receber dados e salvar na variável nome--->
+        <label for="nome">Digite seu nome:</label>
+        <!--pega o que foi digitado e salva na variável nome----->
+        <input type="text" [(ngModel)]="nome">
+        <!---Aciona o metodo quando clicar nese botão---->
+        <button type="button" (click)="adicionarNome()">Adicionar nome</button>
+        <app-servico2></app-servico2>
+</div>
+</div>
+
+
+
+
+

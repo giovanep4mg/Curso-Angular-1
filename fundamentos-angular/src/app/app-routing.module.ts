@@ -11,6 +11,7 @@ import { PipeCustomizadoComponent } from './pipe-customizado/pipe-customizado.co
 import { PiperComponent } from './piper/piper.component';
 import { PrimeiroComponenteComponent } from './primeiro-componente/primeiro-componente.component';
 import { RenderizandoListasComponent } from './renderizando-listas/renderizando-listas.component';
+import { Servico1Component } from './servico1/servico1.component';
 import { SgundoComponentComponent } from './sgundo-component/sgundo-component.component';
 import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'personalizado', component:PersonalizadoComponent},
   {path:'interacao-componentes', component:ComponentePaiComponent},
   { path: 'card', component:CardComponent},
+  { path:'service1', component: Servico1Component}
 ];
 
 @NgModule({

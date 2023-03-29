@@ -1,0 +1,15 @@
+
+.exemplo {
+  border: 3px solid black;
+  margin: 20px;
+  padding: 20px;
+  align-items: flex-start;
+
+}
+
+button {
+  padding: 10px;
+  background-color: rgb(17, 214, 11);
+  color: white;
+
+}
