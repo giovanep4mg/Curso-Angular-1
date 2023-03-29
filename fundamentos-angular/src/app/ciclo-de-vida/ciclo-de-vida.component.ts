@@ -10,24 +10,28 @@ export class CicloDeVidaComponent implements OnInit, OnChanges, OnDestroy {
     horario = new Date();
     timer : any = null!;
 
-    @Input() texto = "";
-
-    ngOnInit(): void {
+      ngOnInit(): void {
       //mensagem de aviso que foi acionado esse metodo
         console.log("O evento OnInit disparou");
 
+
         //setInterval > executa uma ação de tempo em tempos
         this.timer = setInterval(() => this.horario = new Date(), 1000);
+
     }
+
+    @Input() texto = "";
 
     ngOnChanges(changes: SimpleChanges): void {
         console.log(changes);
+
     }
 
     //para limpar os dados quando fechar a página
     ngOnDestroy(): void {
        // limpa o evento timer
         clearInterval(this.timer);
+
     }
 
 }

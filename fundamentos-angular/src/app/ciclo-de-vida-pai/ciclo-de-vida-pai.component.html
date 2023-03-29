@@ -1,8 +1,126 @@
-<h1>
-  Inicio Ciclo de Vida Pai
-</h1>
-<h2>Ciclo de vida</h2>
-<label for="texto">Digite um texto</label>
-<input type="text" id="texto" [(ngModel)]="texto">
-<app-ciclo-de-vida>[texto]="texto"</app-ciclo-de-vida>
-<h1>Final Ciclo de vida Pai</h1>
+<!--Aula-Interpolaçao-->
+<div class="aula">
+  <div class="description">
+  <h1 class="title">Ciclo de Vida de um componente</h1>
+     <h2>
+        <br>
+        <section class="criarComponente">
+           Eu criei um novo componente, chamado "ciclo de vida",<br>
+           Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
+           coloque esse comando <b>ng g c </b><span>*nome do componente que seja criar*</span>, dá "enter" e ele vai criar para você.<br>
+           Esse comando "ng g c" significa = <b>ng generate component</b>.<br>
+           <br>
+        </section>
+        <br>
+        Depois de criar o componente, vai na classe dele <b>ciclo-de-vida.component.ts</b>.<br>
+        <br>
+        <b>ngOnInit()</b> é o ciclo de vida, dos primeiros que inicia quando inicializar o componente,<br>
+        para entendermos melhor, vamos criar um relógio, adicione a propriedade:<br>
+        <b>horario = new Date();</b> => vai guarda a data atual do computador.<br>
+        <b>timer : any = null!</b> inicialiaza "nulo" mas será substituida depois.<br>
+        <br>
+        Dentro do "ngOnInit", adicione:<br>
+        <b>console.log("O evento ngOnInit disparou");</b> só para saber que foi inicializado.<br>
+        <b>this.timer = setInterval(() => this.horario = new Date(), 1000);</b>
+        <br>
+        <b>setInterval</b> é para executar uma função de tempo em tempo.<br>
+        <b>this.horario = new Date()</b> a propriedade horario vai receber a data atual.<br>
+        <b>1000</b> de quanto em quanto tempo vai receber, passa os segundos "1000" .<br>
+        Veja como fica no código:<br>
+        <div class="imagem">
+              <img src="/assets/ciclo-de-vida-1.png" alt="print do código">
+        </div>
+        <br>
+        Para isso acontecendo, vai no <b>ciclo-de-vida.component.html</b>,<br>
+        adicione as tags:<br>
+        "h2" texto 'Horário', abre "chaves duplas = *", coloque o pipe "|" para formatar a hora, feche o "h2".<br>
+        <br>
+        <b>h2</b> Horário : * horario | date: "HH:mm:ss" *<b>/h2 </b><br>
+        <br>
+        <br>
+        Para aparecer na página, vai no <b>app.compoment.html</b>, e adiciona esse componente lá.<br>
+        <br>
+        Na página aberta, clique em "F12" ou clique com o botão direito do mouse sobre a página,<br>
+        escolha a opção "Inspecionar", procure o "console" clique nele, e ao atualizar a página,<br>
+        veja se irá aparecer a mensagem "O evento OnInit disparou", para vê que ele inicializa rápido.<br>
+        Veja como é na página:<br>
+        <div class="imagem">
+              <img src="/assets/ciclo-de-vida-2.png" alt="print do código">
+        </div>
+        <br>
+        <br>
+        <b>Vamos ver um evento que dispara antes dele </b><br>
+        <br>
+        Para isso, vamos criar outro componente, no pront de comando coloque:<br>
+        <b> ng g c ciclo-de-vida-pai</b> , dá enter.<br>
+        <br>
+        Depois de criado, vai na classe dele <b>ciclo-de-vida-pai.component.ts</b> ,<br>
+        adiciona a propriedade <b>texto = "";</b> , só isso.<br>
+        <br>
+        E agora dentro do html no <b>ciclo-de-vida-pai.component.html</b>, adicione as tags:<br>
+        <br>
+        <b>h2</b> Ciclo de vida <b>/h2</b> => só adiciona um titulo.<br>
+        <b>label for="texto"</b> Digite um texto <b>/label</b> <br>
+        <b>input type="text" id="texto" [(ngModel)]="texto"</b> <br>
+        <b>app-ciclo-de-vida [texto]="texto" </b> <b>/app-ciclo-de-vida</b> <br>
+        <br>
+        Veja como fica no código:<br>
+        <div class="imagem">
+              <img src="/assets/ciclo-de-vida-3.png" alt="print do código">
+        </div>
+        <br>
+        Vai dá erro, para resolver vai no <b>ciclo-de-vida.component.ts</b>, <br>
+        e adiciona um "@Input", para receber esse 'texto' :<br>
+        <b>@Input() texto = "" ;</b><br>
+        <br>
+        Agora para ver o segundo ciclo de vida, na classe coloque que ela,<br>
+        também vai implementar "OnChanges", depois já coloque embaixo o :<br>
+        <b>ngOnChanges(changes: SimpleChanges): void * </b>, que já vai implementar um parâmetro,<br>
+        "as mudanças que aconteceram", e dentro dele coloque: <br>
+        <b>console.log(changes);</b> => vai mostrar as mudanças que tiveram na página.<br>
+        <br>
+        Veja como fica no código:<br>
+        <div class="imagem">
+              <img src="/assets/ciclo-de-vida-4.png" alt="print do código">
+        </div>
+        <br>
+        Para ver na página, tem que trocar no <b>app.component.html</b> , colocar:<br>
+        "app-ciclo-de-vida-pai",<br>
+        <br>
+        <br>
+        Na página aberta, clique em "F12" ou clique com o botão direito do mouse sobre a página,<br>
+        escolha a opção "Inspecionar", procure o "console" clique nele, e ao atualizar a página,<br>
+        veja se irá aparecer a mensagem "O evento OnInit disparou", e se está acontecendo algo mais.<br>
+        <br>
+        <br>
+        Agora vamos criar outro método. para fazer a limpeza dos métodos que criamos,<br>
+        para não dá nenhuma erro ao sair da página, para isso vai no <b>ciclo-de-vida.component.ts</b> . <br>
+        Na classe vai implementar  também o "OnDestroy" adicione ele lá,<br>
+        depois faça a implementação dele, como faz um método.<br>
+        <br>
+        <b>ngOnDestroy(): void * </b> <br>
+        <b>clearInterval(this.timer);</b> => para limpar a função da data/hora.<br>
+        <br>
+        Veja como fica no código:<br>
+        <div class="imagem">
+              <img src="/assets/ciclo-de-vida-5.png" alt="print do código">
+        </div>
+        <br>
+        <br>
+        <b>horário</b> o exemplo dele, é para você saber que logo quando abre a página já inicializa o "ngOnInit".<br>
+        <b>campo de texto</b> é para ver que toda vez que você faz algo, a página tem uma ação.<br>
+        Por isso, Ciclo de vida pois está sempre ativa.<br>
+        <br>
+     </h2>
+  </div>
+  <div class="exemplo">
+    <h2>Ciclo de vida</h2>
+    <label for="texto">Digite um texto</label>
+    <input type="text" id="texto" [(ngModel)]="texto">
+    <app-ciclo-de-vida [texto]="texto"></app-ciclo-de-vida>
+  </div>
+  <br>
+  Terminamos essa aula.<br>
+  <br>
+</div>
+

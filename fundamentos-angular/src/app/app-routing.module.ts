@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularComponent } from './angular/angular.component';
 import { CardComponent } from './card/card.component';
 import { CarregarImagensComponent } from './carregar-imagens/carregar-imagens.component';
+import { CicloDeVidaPaiComponent } from './ciclo-de-vida-pai/ciclo-de-vida-pai.component';
+import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component';
 import { ComponentePaiComponent } from './componente-pai/componente-pai.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { InterpolacaoDeTextComponent } from './interpolacao-de-text/interpolacao-de-text.component';
@@ -31,7 +33,8 @@ const routes: Routes = [
   {path:'personalizado', component:PersonalizadoComponent},
   {path:'interacao-componentes', component:ComponentePaiComponent},
   { path: 'card', component:CardComponent},
-  { path:'service1', component: Servico1Component}
+  { path:'service1', component: Servico1Component},
+  { path: 'ciclo-de-vida-pai', component: CicloDeVidaPaiComponent}
 ];
 
 @NgModule({
