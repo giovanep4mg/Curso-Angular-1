@@ -4,23 +4,69 @@
   <h1 class="title">Navegação entre páginas</h1>
      <h2>
         <br>
+        Como fazer a navegação entre as páginas.<br>
+        <br>
+        Dentro do <b>app.component.html</b> acima do "router-outlet",<br>
+        coloque as tags:<br>
+        <br>
+        <b>nav</b> dentro da nav, coloque,<br>
+        <b>ul</b> será coluna de listas, dentro dela ,<br>
+        <b>li</b> seria a linha, dentro dela,<br>
+        <b>a routerLink="primeira-pagina"></b> "Primeira página" <b>/a</b> <br>
+        <b>/li</b> fecha o "li", e adiciona outra "li",<br>
+        <b>li</b> seria a linha, dentro dela,<br>
+        <b>a routerLink="segunda-pagina"></b> "Segunda página" <b>/a</b> <br>
+        <b>routerlink</b> é onde você coloca o link para a página que deseja ir.<br>
+        <b>/li</b> fecha o "li",<br>
+        Veja como fica no código:<br>
+        <div class="imagem">
+              <img src="/assets/navegar-1.png" alt="print do código">
+        </div>
+        <br>
+        <br>
+        Agora temos que cria essa "Segunda página", para isso:<br>
         <section class="criarComponente">
-           Eu criei um novo componente, chamado "event-binding",<br>
+           Eu criei um novo componente, chamado "segunda-pagina",<br>
            Para criar, vai no pront de comando do "VScode", verifique se você está dentro da pasta do seu projeto,<br>
            coloque esse comando <b>ng g c </b><span>*nome do componente que seja criar*</span>, dá "enter" e ele vai criar para você.<br>
            Esse comando "ng g c" significa = <b>ng generate component</b>.<br>
            <br>
-           <b>Atenção:</b> já coloque o componente criado para aparecer no template,<br>
-           para isso vai no componente <b>app.component.html</b>, adiciona o componente criado,<br>
-           <b>app-event-binding</b>, verifique se está aparecendo no template e vamos começar...<br>
         </section>
         <br>
-
+        Depois de criado vai no template dele <b>segunda-pagina.component.html</b>,<br>
+        coloque um "h2" com um titulo = "Segunda página", feche o "/h2".<br>
+        <br>
+        Agora para aparecer tem que criar uma rota para ele, vai no <b>app-routing.module.ts</b> ,<br>
+        e acrescenta mais uma rota <b>* path:'segundo-componente', component:SegundoComponentComponent * </b>,<br>
+        <br>
+        Abra a página e veja se está funcionando os links das páginas, a navegação.<br>
+        Perceba que o menu de navegação não se mexe, mesmo com muda de página, <br>
+        isso acontece por que o "nav" está acima do "router-outlet" as páginas serão carregadas no "router-outlet".<br>
+        <br>
+        <br>
+        <b>Criar um botão, uma função que leve para outra página</b><br>
+        <br>
+        Será criado dentro da primeira página, para isso:<br>
+        Vai no componente <b>primeira-pagina.component.html</b>, e vamos adicionar essas tags:<br>
+        <b>button type="button" (click)="moverParaSegundaPagina()"</b> "Ir para a segunda página",<br>
+        fecha o "/button".<br>
+        <br>
+        Agora temos que criar esse método, vai na classe <b>primeira-pagina.component.ts</b>, <br>
+        dentro do "constructor" adicione o serviço de rotas, colocando dentro dele como parâmetro :<br>
+        <b>private router:Router</b> .<br>
+        <br>
+        Agora podemos criar o método:<br>
+        <b>moverParaSegundaPagina()</b> ,abre "chaves" <br>
+        <b>this.router.navigate(["segunda-pagina"]);</b>  , fecha as "chaves".<br>
+        <br>
+        <b>navigate([ " *rota* " ])</b>, dentro dele você coloca para onde quer ir.<br>
         Veja como fica no código:<br>
         <div class="imagem">
-              <img src="/assets/event-1.png" alt="print do código">
+              <img src="/assets/navegar-2.png" alt="print do código">
         </div>
-
+        <br>
+        Abra a página verifique se está tudo funcionando!<br>
+        Terminamos essa aula.<br>
         <br>
      </h2>
   </div>

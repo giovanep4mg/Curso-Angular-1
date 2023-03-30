@@ -9,7 +9,11 @@ import { Component } from '@angular/core';
 export class PrimeiraPaginaComponent {
 
 //depedencia, servico,gerado
-constructor(private router:Router){}
+constructor(
+  
+  private router:Router
+
+  ){}
 
 //metodo que vai retorna o link da segunda página.
 moverParaSegundaPagina(){
