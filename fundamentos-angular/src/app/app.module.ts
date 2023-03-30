@@ -26,6 +26,8 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ExemploNgContentComponent } from './exemplo-ng-content/exemplo-ng-content.component';
+import { RoteamentoComponent } from './roteamento/roteamento.component';
+import { NavegacaoPaginasComponent } from './navegacao-paginas/navegacao-paginas.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { ExemploNgContentComponent } from './exemplo-ng-content/exemplo-ng-conte
     EventBindingComponent,
     HeaderComponent,
     FooterComponent,
-    ExemploNgContentComponent
+    ExemploNgContentComponent,
+    RoteamentoComponent,
+    NavegacaoPaginasComponent
 
   ],
   imports: [

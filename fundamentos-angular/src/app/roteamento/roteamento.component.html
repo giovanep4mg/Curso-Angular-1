@@ -1,0 +1,78 @@
+<!---Coisas que serão exibidas na página--->
+<div id="todaPagina">
+  <div class="aula">
+    <div class="description">
+      <h1 class="title">Roteamento</h1>
+        <h2>
+          Vamos criar um novo projeto, com o nome "roteamento", para isso:<br>
+          No pront de comando do "VScode" digite esses comandos:<br>
+          <b> ng new *nome do seu projeto* </b>.<br>
+          Vai pedir para você confirma se quer ou não instalar o "Angular routing" diz que <b> não</b>,<br>
+          por que vamos ver como adiciona ele passso a passo.<br>
+          Escolha o "CSS" , e espere por que vai demorar um pouquinho.<br>
+          <br>
+          Agora depois de criado o projeto, vamos instalar a biblioteca que vamos usar.<br>
+          no pront de comando, verifique se você está na pasta do projeto, tem que está dentro dela;<br>
+          para "Entrar" na pasta use o <b>cd *nome da pasta </b>, <br>
+          para "Sair" da pasta use o <b>cd..</b> <br>
+          <br>
+          Na pasta do projeto, para instalar a biblioteca adicione o comando:<br>
+          <b>npm i @angular/router</b> => para trabalhar com roteamento de páginas.<br>
+          <br>
+          Agora tem que criar um módulo responsável por fazer esse roteamento,<br>
+          no pront de comando ultiliza esses comandos:<br>
+          <b>ng g module app-routing --flat --module app</b>, dá enter.<br>
+          <br>
+          <b>--flat</b> => usa para ele já ficar na pasta "app" .<br>
+          <div class="imagem">
+            <img src="/assets/roteamento-1.png">
+          </div>
+          <br>
+          <b>--module</b> => já vai acrescenta ele dentro do "app.module.ts" .<br>
+          <div class="imagem">
+            <img src="/assets/roteamento-2.png">
+          </div>
+          <br>
+          <br>
+          Vamos começar a trabalhar esse módulo de roteamento, no <b>app.routing.module.ts</b> .<br>
+          No "@ngModule" dentro do "imports" adiciona o  <b>RouterModule.forRoot(routes)</b> ,<br>
+          <div class="imagem">
+            <img src="/assets/roteamento-3.png">
+          </div>
+          <br>
+          para dizer que vai importa "rotas", e agora vamos criar essas rotas:<br>
+          <br>
+          Acima do "@ngModule", você coloca esses comandos:<br>
+          <b>const routes: Routes = [ *aqui dentro passa a rota* ]</b>, já vamos adicionar a primeira rota<br>            <b> * path: 'primeira-pagina', component: PrimeiraPaginaComponent *,</b> no lugar dos asteriscos são "chaves".<br>
+          <div class="imagem">
+            <img src="/assets/roteamento-4.png">
+          </div>
+          <br>
+          <b>path</b> é o endereço que digitamos na barra do navegador.<br>
+          <b> component</b> é qual componente vai inicializar.<br>
+          <br>
+          Vai dá erro por que precisamos criar esse "PrimeiraPaginaComponente".<br>
+          Para criar esse componente, vai no pront de comando e coloque esses códigos:<br>
+          <b>ng g c primeira-pagina</b> , dá enter.<br>
+          <br>
+          Agora vamos dá uma atualizada no "PrimeiroPaginaComonente" para o angular imorta ele.<br>
+          <br>
+          Agora vai no template dele <b>primeira-pagina.component.html</b>, e adiciona as tags:<br>
+          <b>h2</b> coloque o titulo "Primeira Página", feche o <b>/h2</b> <br>
+          <br>
+          Volte agora no <b>app.rounting.ts</b> , para exportar e pode ser usado no "app.module".<br>
+          <b>exports: [RouterModule],</b> <br>
+          <br>
+          Para finalizar vai no componente <b>app.component.html</b>, apagar o que estiver lá dentro,<br>
+          e adicona o <b>router-outlet</b> , para conseguir ver na página.<br>
+          <br>
+          Para rodar o projeto, vai no pront de comando e digita:<br>
+          <b>ng serve --open </b>, que vai carregar o projeto e já vai abrir no navegador.<br>
+          <br>
+          Pronto finalizamos nossa primeira aula.<br>
+          <br>
+        </h2>
+    </div>
+  </div>
+</div>
+

@@ -13,9 +13,11 @@ import { AllGuard } from './all.guard';
 const routes: Routes = [
   //quando você digita "primeira pagina" ou "segunda pagina", sem o hifén entre as palavras, após a barra "http://localhost:4200/" no navegador será redirecionado para o menu.
 
-  //quando você digita "primeira-pagina", após a barra "http://localhost:4200/" no navegador será executado esse componente "PrimeiraPaginaComponent", que abri a primeira página.
+  //quando você digita "primeira-pagina", após a barra "http://localhost:4200/" no navegador
+  //será executado esse componente "PrimeiraPaginaComponent", que abri a primeira página.
   { path: 'primeira-pagina', component: PrimeiraPaginaComponent },
 
+  
   //quando você digita "segunda-pagina", após a barra "http://localhost:4200/" no navegador será executado esse componente "SegundaPaginaComponent", que abri a segunda página.
   { path: 'segunda-pagina', component: SegundaPaginaComponent },
 

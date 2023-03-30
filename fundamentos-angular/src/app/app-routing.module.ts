@@ -8,11 +8,13 @@ import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component';
 import { ComponentePaiComponent } from './componente-pai/componente-pai.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { InterpolacaoDeTextComponent } from './interpolacao-de-text/interpolacao-de-text.component';
+import { NavegacaoPaginasComponent } from './navegacao-paginas/navegacao-paginas.component';
 import { PersonalizadoComponent } from './personalizado/personalizado.component';
 import { PipeCustomizadoComponent } from './pipe-customizado/pipe-customizado.component';
 import { PiperComponent } from './piper/piper.component';
 import { PrimeiroComponenteComponent } from './primeiro-componente/primeiro-componente.component';
 import { RenderizandoListasComponent } from './renderizando-listas/renderizando-listas.component';
+import { RoteamentoComponent } from './roteamento/roteamento.component';
 import { Servico1Component } from './servico1/servico1.component';
 import { SgundoComponentComponent } from './sgundo-component/sgundo-component.component';
 import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
@@ -34,7 +36,9 @@ const routes: Routes = [
   {path:'interacao-componentes', component:ComponentePaiComponent},
   { path: 'card', component:CardComponent},
   { path:'service1', component: Servico1Component},
-  { path: 'ciclo-de-vida-pai', component: CicloDeVidaPaiComponent}
+  { path: 'ciclo-de-vida-pai', component: CicloDeVidaPaiComponent},
+  { path:'roteamento', component: RoteamentoComponent},
+  { path:'navegacao-paginas', component : NavegacaoPaginasComponent}
 ];
 
 @NgModule({
