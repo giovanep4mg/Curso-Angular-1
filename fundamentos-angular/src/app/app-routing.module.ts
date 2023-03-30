@@ -1,3 +1,4 @@
+import { PaginaNaoEncontradaComponent } from './../../../roteamento/src/app/pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularComponent } from './angular/angular.component';
@@ -18,6 +19,7 @@ import { RoteamentoComponent } from './roteamento/roteamento.component';
 import { Servico1Component } from './servico1/servico1.component';
 import { SgundoComponentComponent } from './sgundo-component/sgundo-component.component';
 import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
+import { RoteamentoPaginaNEncontradaComponent } from './roteamento-pagina-n-encontrada/roteamento-pagina-n-encontrada.component';
 
 const routes: Routes = [
 
@@ -38,7 +40,8 @@ const routes: Routes = [
   { path:'service1', component: Servico1Component},
   { path: 'ciclo-de-vida-pai', component: CicloDeVidaPaiComponent},
   { path:'roteamento', component: RoteamentoComponent},
-  { path:'navegacao-paginas', component : NavegacaoPaginasComponent}
+  { path:'navegacao-paginas', component : NavegacaoPaginasComponent},
+  { path: 'pagina-nao-encontrada', component: RoteamentoPaginaNEncontradaComponent}
 ];
 
 @NgModule({

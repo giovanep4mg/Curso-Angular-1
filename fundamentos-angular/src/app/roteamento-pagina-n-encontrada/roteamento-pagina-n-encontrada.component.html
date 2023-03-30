@@ -1,0 +1,53 @@
+<!---Coisas que serão exibidas na página--->
+<div id="todaPagina">
+  <div class="aula">
+    <div class="description">
+      <h1 class="title">Página não encontrada, redirecionamento </h1>
+        <h2>
+          <br>
+          <span class="subTitle"> Redirecionamento </span> <br>
+          Para que quando não estiver nada na barra do navegador, seja redirecionado para a página escolhida.<br>
+          Para isso, vai no componente <b>app-routing.module.ts</b>, e acrescenta a rota:<br>
+          <br>
+          <b>* path: '', redirectTo: 'primeira-pagina', pathMatch: 'full' *</b> <br>
+          <br>
+          Print do código:<br>
+          <div class="imagem">
+            <img src="/assets/redirecionamento-1.png">
+          </div>
+          <br>
+          <br>
+          <span class="subTitle"> Página não encontrada </span> <br>
+          <br>
+          Para criar essa página, precisamos criar um novo componente, vai no pront de comando,<br>
+          certifique que está dentro da pasta do projeto, e coloque esse comando:<br>
+          <b>ng g c PaginaNaoEncontrada</b>, dê enter.<br>
+          <br>
+          Agora vamos editar o template, coloque as tags:<br>
+          <br>
+          <b>h2</b> dentro esse texto = "404!Página não encontrada.", fecha o <b>/h2</b> <br>
+          <br>
+          Print do código:<br>
+          <div class="imagem">
+            <img src="/assets/redirecionamento-2.png">
+          </div>
+          <br>
+          <br>
+          Vai para o componente <b>app-routing.module.ts</b>, e adiciona essa rota:<br>
+          <b> path: '**', component: PaginaNaoEncontradaComponent </b>, <br>
+          <br>
+          Print do código:<br>
+          <div class="imagem">
+            <img src="/assets/redirecionamento-3.png">
+          </div>
+          <br>
+          Assim quando o usuário digitar algo na barra de navegação que não foi pré-definida,<br>
+          vai abrir essa página.<br>
+          <br>
+          Finalizamos essa aula.<br>
+        </h2>
+    </div>
+  </div>
+</div>
+
+

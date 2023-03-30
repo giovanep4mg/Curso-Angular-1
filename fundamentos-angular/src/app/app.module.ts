@@ -28,6 +28,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ExemploNgContentComponent } from './exemplo-ng-content/exemplo-ng-content.component';
 import { RoteamentoComponent } from './roteamento/roteamento.component';
 import { NavegacaoPaginasComponent } from './navegacao-paginas/navegacao-paginas.component';
+import { RoteamentoPaginaNEncontradaComponent } from './roteamento-pagina-n-encontrada/roteamento-pagina-n-encontrada.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { NavegacaoPaginasComponent } from './navegacao-paginas/navegacao-paginas
     FooterComponent,
     ExemploNgContentComponent,
     RoteamentoComponent,
-    NavegacaoPaginasComponent
+    NavegacaoPaginasComponent,
+    RoteamentoPaginaNEncontradaComponent
 
   ],
   imports: [
