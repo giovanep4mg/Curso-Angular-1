@@ -1,11 +1,10 @@
-import { PaginaNaoEncontradaComponent } from './../../../roteamento/src/app/pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { RoteamentoParametroRotaComponent } from './roteamento-parametro-rota/roteamento-parametro-rota.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularComponent } from './angular/angular.component';
 import { CardComponent } from './card/card.component';
 import { CarregarImagensComponent } from './carregar-imagens/carregar-imagens.component';
 import { CicloDeVidaPaiComponent } from './ciclo-de-vida-pai/ciclo-de-vida-pai.component';
-import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component';
 import { ComponentePaiComponent } from './componente-pai/componente-pai.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { InterpolacaoDeTextComponent } from './interpolacao-de-text/interpolacao-de-text.component';
@@ -41,7 +40,8 @@ const routes: Routes = [
   { path: 'ciclo-de-vida-pai', component: CicloDeVidaPaiComponent},
   { path:'roteamento', component: RoteamentoComponent},
   { path:'navegacao-paginas', component : NavegacaoPaginasComponent},
-  { path: 'pagina-nao-encontrada', component: RoteamentoPaginaNEncontradaComponent}
+  { path: 'pagina-nao-encontrada', component: RoteamentoPaginaNEncontradaComponent},
+  { path: 'parametro-rota', component: RoteamentoParametroRotaComponent}
 ];
 
 @NgModule({

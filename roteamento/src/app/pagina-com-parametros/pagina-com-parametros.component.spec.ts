@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaginaConsultaComponent } from './pagina-consulta.component';
+import { PaginaConsultaComponent } from './pagina-com-parametros.component';
 
 describe('PaginaConsultaComponent', () => {
   let component: PaginaConsultaComponent;

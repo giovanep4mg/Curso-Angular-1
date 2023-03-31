@@ -29,6 +29,7 @@ import { ExemploNgContentComponent } from './exemplo-ng-content/exemplo-ng-conte
 import { RoteamentoComponent } from './roteamento/roteamento.component';
 import { NavegacaoPaginasComponent } from './navegacao-paginas/navegacao-paginas.component';
 import { RoteamentoPaginaNEncontradaComponent } from './roteamento-pagina-n-encontrada/roteamento-pagina-n-encontrada.component';
+import { RoteamentoParametroRotaComponent } from './roteamento-parametro-rota/roteamento-parametro-rota.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { RoteamentoPaginaNEncontradaComponent } from './roteamento-pagina-n-enco
     ExemploNgContentComponent,
     RoteamentoComponent,
     NavegacaoPaginasComponent,
-    RoteamentoPaginaNEncontradaComponent
+    RoteamentoPaginaNEncontradaComponent,
+    RoteamentoParametroRotaComponent
 
   ],
   imports: [

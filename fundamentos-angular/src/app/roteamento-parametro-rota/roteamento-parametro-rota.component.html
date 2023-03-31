@@ -1,0 +1,119 @@
+<!---Coisas que serão exibidas na página--->
+<div id="todaPagina">
+  <div class="aula">
+    <div class="description">
+      <h1 class="title">Parâmetro da rota </h1>
+        <h2>
+          Observe essa imagem:<br>
+          <div class="imagem">
+            <img src="/assets/parametro-rota-1.png">
+          </div>
+          Temos uma "url" que contém:<br>
+          <b>http:</b> => que é um esquema pode ser "http ou https".<br>
+          <b>//localHost</b> => que é o "domínio".<br>
+          <b>: 4200</b> => que é a porta.<br>
+          <b>/produtos</b> => que é a rota.<br>
+          <b>/1</b> => que é o parâmetro da rota.<br>
+          <br>
+          Serve para obter informações, detalhes de um determinado produto ou recurso.<br>
+          <br>
+          <br>
+          Agora vamos criar um novo componente, vai no pront de comando e digita:<br>
+          <b>ng g c pagina-com-parametros</b>, dá enter.<br>
+          <br>
+          Depois de criado o componente vai no <b>app-routing.module.ts</b> e adiciona:<br>
+          <b>path: 'pagina-com-parametros/:id', component: PaginaComParametros</b> <br>
+          <br>
+          Esse "/:id" é o parâmetro que terei que acessar através da classe,<br>
+          quando precisar obter essa informação.<br>
+          <br>
+          Agora no template <b>pagina-com-parametros.component.html</b>, adicione essa tag:<br>
+          "h2" dentro dela esse texto ='Parâmetro da rota', abre "chaves duplas" dentro coloque <b>id</b>.<br>
+          Vai dá um erro, por que esse id não existe, ainda não foi criado.<br>
+          <br>
+          Para criar o id, vai na classe <b>pagina-com-parametros.component.ts</b>,<br>
+          no "constructor" passe como parâmetro o " private route : ActivatedRoute ",<br>
+          através dele podemos trabalhar com 'rotas'.<br>
+          <br>
+          Depois no "ngOnInit()", vamos dizer que queremos pegar um "id", <br>
+          <br>
+          <b>this.route.paramMap.subscribe((params) =></b> <br>
+          <b>this.id = Number(params.get('id'));</b> <br>
+          para criar esse "id", dentro da classe adicione a propriedade:<br>
+          <b> id: number | null = null;</b> <br>
+          <br>
+          Print do código:<br>
+          <div class="imagem">
+            <img src="/assets/parametro-rota-2.png">
+          </div>
+          <br>
+          Na barra de navegação depois do "http://localHost:???" digite:<br>
+          <b>pagina-com-parametros/5</b> vai mostrar o template que criamos, como na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="/assets/parametro-rota-3.png">
+          </div>
+          <br>
+          Se digitar somente <b>pagina-com-parametros</b> vai dá erro e exibir a página de não encontrado.<br>
+          Para que dê certo tem que adicionar a "barra" e um "número",
+          <br>
+          <br>
+          <span style="background-color: rgba(0, 255, 255, 0.384); font-size: 55px; color: blue;
+           text-decoration:underline;">
+            Como obter os parâmetros de consulta</span>
+          <br>
+          <br>
+          Vai no template <b>pagina-com-parametros.component.html</b> e adiciona mais essas tags:<br>
+          <br>
+          <b>h2</b> *ngIf="nome">Query param de nome:"chaves duplas" dentro = 'nome', <b>/h2</b> <br>
+          <b>h2</b> *ngIf="idade">Query param de idade:"chaves duplas" dentro = 'idade', <b>/h2</b> <br>
+          <br>
+          *ngIf serve para, que se estiver "nome ou idade " vai aparecer no template.<br>
+          <br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/parametro-rota-4.png">
+          </div>
+          <br>
+          <br>
+          Depois vai na classe <b>pagina-com-parametros.component.ts</b>, adiciona as propriedades:<br>
+          <b>idade: number | null = null;</b>  <br>
+          <b>nome: string | null = null;</b>  <br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/parametro-rota-5.png">
+          </div>
+          <br>
+          <br>
+          Agora para acessar, vai no "ngOnInit" e adiciona: <br>
+          <br>
+          <b>this.route.queryParamMap.subscribe((params) =></b>  <br>
+          <b>this.idade = Number(params.get('idade')); </b>  <br>
+          <b>this.nome = params.get('nome');</b>  <br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/parametro-rota-6.png">
+          </div>
+          <br>
+          <br>
+          Na barra de navegação depois do "http://localHost:???" digite:<br>
+          <b>pagina-com-parametros/5?nome = Joao & idade = 23 </b> vai mostrar o template que criamos,<br>
+           como na imagem abaixo:<br>
+          <div class="imagem">
+            <img src="/assets/parametro-rota-7.png">
+          </div>
+          <br>
+          <b>?</b> => sinal que está buscando ou consultando. <br>
+          <b>nome =</b> => funciona como uma chave. <br>
+          <b>Joao</b> => é o valor . <br>
+          <b>&</b> => para separar se tiver mais valores. <br>
+          <b>idade =</b> => funciona como uma chave. <br>
+          <b>23</b> => é o valor. <br>
+          <br>
+          Finalizamos essa aula.<br>
+        </h2>
+    </div>
+  </div>
+</div>
+
+
+

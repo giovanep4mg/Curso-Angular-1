@@ -1,6 +1,6 @@
 import { LoginComponent } from './login/login.component';
 import { PaginaProtegidaComponent } from './pagina-protegida/pagina-protegida.component';
-import { PaginaConsultaComponent } from './pagina-consulta/pagina-consulta.component';
+import { PaginaComParametros } from './pagina-com-parametros/pagina-com-parametros.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { SegundaPaginaComponent } from './segunda-pagina/segunda-pagina.component';
 import { PrimeiraPaginaComponent } from './primeira-pagina/primeira-pagina.component';
@@ -27,7 +27,7 @@ const routes: Routes = [
 
 
   // "/:id" esse é o parametro que tem que acessar na classe, e qual componente será executado.
-  { path: 'pagina-consulta/:id', component: PaginaConsultaComponent },
+  { path: 'pagina-com-parametros/:id', component: PaginaComParametros },
 
   //
   {
