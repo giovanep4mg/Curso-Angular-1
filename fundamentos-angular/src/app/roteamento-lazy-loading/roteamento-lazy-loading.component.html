@@ -1,0 +1,75 @@
+<!---Coisas que serão exibidas na página--->
+<div id="todaPagina">
+  <div class="aula">
+    <div class="description">
+      <h1 class="title"> Lazy loading </h1>
+        <h2>
+          <br>
+          É usado para baixar as informações da página, somente quando for aberta, para não sobrecarregar o site.<br>
+          Exemplo o site tem três páginas se abrir todas juntas, vai ser mais demorado, <br>
+          se abrir somente a que você clicou para entrar, ela abrirá mais rápido.<br>
+          <br>
+          <br>
+          Vamos criar um "módulo", que pode conter diversos componentes, vamos separar nossos códigos.<br>
+          <br>
+          No pront de comando, verifique se está dentro da pasta do projeto, e coloque :<br>
+          <b>ng g module lazy-loading  --route=lazy-loading --module=app.module</b>, dê enter.<br>
+          <br>
+          <b>--route=lazy-loading</b> => já passa a rota que será acessado esse módulo. <br>
+          <b>--module=app.module</b> => já será atrelado ao "app.module.ts". <br>
+          <br>
+          Depois de criado, abre a pasta dele, e veja que ele criou novo módulo <b>lazy-loading.module.ts</b>.<br>
+          <br>
+          No <b>app-routing.module.ts</b>, veja a rota que ele criou é diferente das outras rotas,<br>
+          <br>
+          <b>path:'lazy-loading'</b> o endereço da rota.<br>
+          <b>loadChildren: ()</b> que pede para fazermos uma função.<br>
+          <b>=> import('./lazy-loading/lazy-loading.module')</b> pede para importa e passa o caminho .<br>
+          <b>then((m) => m.LazyLoadingModule)</b> e vai carregar esse módulo.<br>
+          <br>
+          <b>path:'lazy-loading',loadChildren: () => import('./lazy-loading/lazy-loading.module').then((m) => m.LazyLoadingModule),</b> <br>
+          <br>
+          Print do código:<br>
+          <div class="imagem">
+            <img src="/assets/lazy-1.png">
+          </div>
+          <br>
+          <br>
+          Ele também criou o "router", no <b>lazy-loading-routing.module.ts</b> do nosso módulo,<br>
+          já definiu as rotas, no nosso caso só tem a rota inicial, <br>
+          que vai acionar o nosso módulo mostrando o seu template, a sua página.<br>
+          Print do código:<br>
+          <div class="imagem">
+            <img src="/assets/lazy-2.png">
+          </div>
+          <br>
+          <br>
+          Vamos vê funcionando para entender a diferença.<br>
+          Abra a página, clique em "F12",<br>
+          ou clique sobre a página com o botão direito do mouse e escolha "Inspecionar",<br>
+          <div class="imagem">
+            <img src="/assets/lazy-3.png">
+          </div>
+          <br>
+          vai no "Network", atualize a página e veja os arquivos que serão carregados.<br>
+          <br>
+          <div class="imagem">
+            <img src="/assets/lazy-4.png">
+          </div>
+          <br>
+          Agora na barra de navegação digite:<b>lazy-loading</b>, e veja quais os arquivos foram carregados.<br>
+          <div class="imagem">
+            <img src="/assets/lazy-5.png">
+          </div>
+          <br>
+          Esse arquivo <b></b> só foi carregado, quando executamos a página "lazy-loading",<br>
+          esse é o conceito do "lazy-loading", só carregar os arquivos se for precisar deles.<br>
+          <br>
+          Finalizamos essa aula.<br>
+        </h2>
+    </div>
+  </div>
+</div>
+
+
+

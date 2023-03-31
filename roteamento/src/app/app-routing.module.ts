@@ -32,10 +32,7 @@ const routes: Routes = [
   //
   {
     path: 'lazy-loading',
-    loadChildren: () =>
-      import('./lazy-loading/lazy-loading.module').then(
-        (m) => m.LazyLoadingModule
-      ),
+    loadChildren: () => import('./lazy-loading/lazy-loading.module').then((m) => m.LazyLoadingModule),
   },
 
   //

@@ -19,6 +19,7 @@ import { Servico1Component } from './servico1/servico1.component';
 import { SgundoComponentComponent } from './sgundo-component/sgundo-component.component';
 import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
 import { RoteamentoPaginaNEncontradaComponent } from './roteamento-pagina-n-encontrada/roteamento-pagina-n-encontrada.component';
+import { RoteamentoLazyLoadingComponent } from './roteamento-lazy-loading/roteamento-lazy-loading.component';
 
 const routes: Routes = [
 
@@ -41,7 +42,8 @@ const routes: Routes = [
   { path:'roteamento', component: RoteamentoComponent},
   { path:'navegacao-paginas', component : NavegacaoPaginasComponent},
   { path: 'pagina-nao-encontrada', component: RoteamentoPaginaNEncontradaComponent},
-  { path: 'parametro-rota', component: RoteamentoParametroRotaComponent}
+  { path: 'parametro-rota', component: RoteamentoParametroRotaComponent},
+  { path: 'lazy-loading', component: RoteamentoLazyLoadingComponent}
 ];
 
 @NgModule({
