@@ -8,7 +8,7 @@
 }
 
 .title{
-  font-size: 80px;
+  font-size: 65px;
   letter-spacing: -1.5px;
 }
 
@@ -58,10 +58,10 @@ li:hover{
 
 
 li a{
-  padding: 10px 10px;
+  padding: 5px 5px;
   color: var(--gray);
   font-weight: 400;
-  font-size: 22px;
+  font-size: 23px;
   text-decoration: none;
   transition: all .3s ease-in-out;
 }

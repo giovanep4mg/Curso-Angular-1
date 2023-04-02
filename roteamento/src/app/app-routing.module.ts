@@ -37,8 +37,7 @@ const routes: Routes = [
 
   //
   {
-    path: 'pagina-protegida',
-    component: PaginaProtegidaComponent,
+    path: 'pagina-protegida',component: PaginaProtegidaComponent,
     canActivate: [AllGuard],
   },
 

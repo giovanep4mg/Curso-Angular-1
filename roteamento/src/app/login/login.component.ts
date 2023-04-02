@@ -13,7 +13,12 @@ export class LoginComponent {
   senha = ' ';
 
   //injeta nessa classe
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) {}
+
+
 
   login() {
     // se foi autenticado o email e a senha

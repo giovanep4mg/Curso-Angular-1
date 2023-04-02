@@ -31,6 +31,7 @@ import { NavegacaoPaginasComponent } from './navegacao-paginas/navegacao-paginas
 import { RoteamentoPaginaNEncontradaComponent } from './roteamento-pagina-n-encontrada/roteamento-pagina-n-encontrada.component';
 import { RoteamentoParametroRotaComponent } from './roteamento-parametro-rota/roteamento-parametro-rota.component';
 import { RoteamentoLazyLoadingComponent } from './roteamento-lazy-loading/roteamento-lazy-loading.component';
+import { RoteamentoRouterGuardComponent } from './roteamento-router-guard/roteamento-router-guard.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { RoteamentoLazyLoadingComponent } from './roteamento-lazy-loading/roteam
     NavegacaoPaginasComponent,
     RoteamentoPaginaNEncontradaComponent,
     RoteamentoParametroRotaComponent,
-    RoteamentoLazyLoadingComponent
+    RoteamentoLazyLoadingComponent,
+    RoteamentoRouterGuardComponent
 
   ],
   imports: [

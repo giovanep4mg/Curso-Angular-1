@@ -1,0 +1,264 @@
+<!---Coisas que serão exibidas na página--->
+<div id="todaPagina">
+  <div class="aula">
+    <div class="description">
+      <h1 class="title">Router Guard</h1>
+        <h2>
+          <br>
+          Nessa aula veremos o conceito do <b>router guard</b>, que serve para guarda as rotas.<br>
+          Para evitar que pessoas que não tem o acesso, acesse essas rotas, como um login<br>
+          <br>
+          Para começar vamos criar um novo componente, vai no pront de comando e digita:<br>
+          <b>ng g c pagina-protegida</b>, dê enter  <br>
+          <br>
+          Depois de criado esse componente vai no template dele, <b>pagina-protegida.component.html</b>,<br>
+          coloque a "tag" <b>button</b> dentro dela o texto = 'logout', fecha o <b>/button</b>.<br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-1.png">
+          </div>
+          <br>
+          Agora vai no template principal da nossa aplicação<b>app.component.html</b>, <br>
+          adiciona mais um link para a pagina protegida, coloque as tags:<br>
+          <br>
+          <b>li</b> => uma linha, dentro dela coloque a tag a passando o endereço do link, <br>
+          <b>a routerLink="pagina-protegida"</b> texto='Página protegida', fecha o <b>/a</b> <br>
+          <b>/li</b>  <br>
+          <br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-2.png">
+          </div>
+          <br>
+          Agora oara criar a rota, vamos no <b>app-routing.module.ts</b> e defina a rota,<br>
+          <b> * path: 'pagina-protegida', component: PaginaProtegidaComponent, *</b> <br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-3.png">
+          </div>
+          <br>
+          Quando abrimos a página ainda teremos acesso, clicando no link ou escrevendo na barra de navegação.<br>
+          Mas o queremos é deixar ela privada, não deixar abertar para todos acessarem.<br>
+          Para isso vamos :<br>
+          <br>
+          Criar um "router guard", no pront de comando coloque esse comando:<br>
+          <b> ng g guard-all</b> clica em enter.<br>
+          Vai aparecer alguns "router-guards" para você escolher, nos vamos usar o <b>CanActate</b>.<br>
+          depois de escolhido ele vai continuar a instalação.<br>
+          <br>
+          Depois de criado, abra o <b>all.guard.ts</b> e vejamos o que ele criou:<br>
+          <b>@Injectable</b> que teremos que usar, injeta ele sempre que for usá-lo.<br>
+          método chamado <b> canActivate </b>, que é preciso.<br>
+          <br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-4.png">
+          </div>
+          <br>
+          <b>Como adicionar esse guard-router a sua rota</b><br>
+          <br>
+          Vai no componente <b>app.routing.module.ts</b>, na rota da página,<br>
+          acrescente o <b>canActivate:[AthGuard]</b> .<br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-5.png">
+          </div>
+          <br>
+          Para ter acesso a essa página, vamos criar mais um componente.<br>
+          No pront de comando, digite: <b>ng g c login </b>,dê enter><br>
+          <br>
+          Para visualizar na página, vai no <b>app-routing.module.ts</b> e adiciona: <br>
+          <b>* path: 'login', component: LoginComponent * </b>, os asteriscos são as chaves .<br>
+          <br>
+          Agora depois de criar esse componente,<br>
+          vai no template dele <b>login.componentt.html</b>, adiciona essas tags:<br>
+          <br>
+          <b>h2</b> " login " <b>/h2</b> <br>
+          <b>label for="email"</b> " Email " <b>/label</b> <br>
+          <b>input type="texto" id="email" [(ngModel)]="email"</b>  <br>
+          <b>label for="senha"</b> " Senha " <b>/label</b> <br>
+          <b>input type="password" id="senha" [(ngModel)]="senha"</b>  <br>
+          <b>button (click)="login()"</b> " Entrar " <b>/buttonl</b> <br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-6.png">
+          </div>
+          <br>
+          Para poder usar o "ngModel", deve ter importado o <b>FormsModule</b>, <br>
+          no componente <b>app-routing.module.ts</b> <br>
+          <br>
+          <br>
+          Agora temos que definir as duas propriedades : <b> Email e Senha</b>.<br>
+          Para isso vai no componente <b>login.component.ts</b>, dentro da classe coloque:<br>
+          <br>
+          <b>Email = " " ;</b> que será vazia.<br>
+          <b>Senha = " " ;</b> que será vazia.<br>
+          <br>
+          Agora vamos criar o método "login()", dentro desse componente <b>login.component.ts</b> .<br>
+          <b>login()</b> *abre e fecha chaves* <br>
+          Vamos usar esse método daqui a pouco.<br>
+          <br>
+          Mas seria bom ter uma função que diz quando estou ou não logado.<br>
+          <br>
+          Para isso, vamos criar um serviço de autenticação.<br>
+          <br>
+          <div class="autenticar">
+            <h3>Autenticar</h3><br>
+            <br>
+            A forma de indentificar o usuário é através de um "token", seria a chave particular dele.<br>
+            Esse token é um "JWT", que é basicamente uma sequência de caracteres.<br>
+            link para o site <a href="https://jwt.io/">JWT</a> .<br>
+            Como é esse token, veja na imagem:<br>
+            <div class="imagem">
+              <img src="/assets/router-guard-7.png">
+            </div>
+            <br>
+            Tem como codificar esse token, ali vemos que tem o id, o nome.<br>
+            Faremos uma simulação, pois esse token é gerado no back-End do projeto.<br>
+            <br>
+          </div>
+          <div class="guarda-dados">
+            <h3>Onde guarda esses dados:</h3><br>
+            <br>
+            <b>localStorage</b> => onde fica guardada algumas informações do usuário,<br>
+            é quando você entra num site e já tem seus dados salvo, você já entra logado.<br>
+            <br>
+            <b>SessionStorage</b> => guarda as informações somente quando o usuário estiver logado,<br>
+            se fechar a página ou o navegador os dados serão apagados, e terá que fazer novo login.<br>
+            <br>
+          </div>
+          Vamos para a prática então:<br>
+          <br>
+          No pront de comando digite: <b> ng g service auth</b> dá enter.<br>
+          <br>
+          Dentro do componente <b>auth.service.ts</b>, já crie um método para fazer a autenticação do usuário.<br>
+          <b>estaAutenticado(): Boolean *abre chaves* </b>, dentro coloque:  <br>
+          <b>return !!sessionStorage.getItem('acess-token');</b> , fecha as "chaves".<br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-8.png">
+          </div>
+          <b> !! </b> fez a conversão do código em booleano, agora é true ou false.<br>
+          <b>acess-token</b> é a chave de acesso que teremos.<br>
+          Quando tiver o "token" estará ou não autenticado.<br>
+          <br>
+          <br>
+          Já vamos criar esse token.<br>
+          <br>
+          Para criar esse "token de acesso", é só criar uma propriedade com o nome:<br>
+          <b>acessToken</b> e dentro dela colocar o 'token' que vimos antes:<br>
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';<br>
+          <br>
+          Estamos usando esse, por que é só um exemplo, mas deve ser criado outro no "back-End" do projeto.<br>
+          <br>
+          <br>
+          Vamos criar agora o método de login, que vai receber: email, senha, <br>
+          <br>
+          <b>login(email: string, senha: string): boolean *abre chaves* </b> <br>
+          ____<b>if (email == 'admin@admin.com.br' && senha == '123456') *abre chaves* </b> <br>
+          _______<b>sessionStorage.setItem('acess-token', this.acessToken);</b> <br>
+          ____<b>return true;</b> <br>
+          *fecha 1 chaves* <br>
+          ____<b>return false;</b> <br>
+          *fecha chaves* <br>
+          <br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-9.png">
+          </div>
+          Se o email e senha forem iguais a esses, será liberado o acesso, se não for não será.<br>
+          <br>
+          <br>
+          Agora o método "logout", que vai limpar a "sessionStorage",<br>
+          <br>
+          <b>logout()</b> *abre chaves* <br>
+          ____<b>sessionStorage.clear();</b> <br>
+          *fecha chaves* <br>
+          <br>
+          <br>
+          Já implementamos o serviço.<br>
+          <br>
+          Agora vai no componente <b>login.component.ts</b>, vamos usar o serviço,<br>
+          para isso dentro do constructor, passe esses parâmetros:<br>
+          <b>private auth: AuthService,</b> => para usar o serviço que criamos.<br>
+          <b>private router: Router</b> => para navegar para outra página.<br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-10.png">
+          </div>
+          <br>
+          No método "login()",  vamos fazer uma verificação, se for verdadeiro vai para a página,<br>
+          se não for verdadeiro, vai mostrar uma mensagem na tela, e depois limpar a senha e email.<br>
+          <br>
+          <b>login()</b> *abre chaves<br>
+          <b>if (this.auth.login(this.email, this.senha))</b> *abre chaves<br>
+          <b>this.router.navigate(['pagina-protegida']);</b> <br>
+          <b>return;</b> <br>
+          * fecha uma chaves* <br>
+          <b>alert('O login está inválido');</b> <br>
+          <b>this.email = '';</b> <br>
+          <b>this.senha = '';</b> <br>
+          *fecha a chaves* <br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-11.png">
+          </div>
+          <br>
+          <br>
+          Para poder entrar na página, fará uma verificação, se o usário está logado ou não,<br>
+          para isso, vai no <b>all.guard.ts</b>, lá dentro crie um <b>constructor</b>,<br>
+          <br>
+          <b>private auth: AuthService,</b> => para usar o serviço que criamos.<br>
+          <b>private router: Router</b> => para navegar para outra página.<br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-10.png">
+          </div>
+          <br>
+          Agora coloque um "if" dentro do "canActivate", para verificar se está autenticado ou não,<br>
+          Se <b>NÃO</b> estiver "autenticado" vai para a página "login", se estiver vai para a página protegida.<br>
+          <br>
+          <b>if (!this.auth.estaAutenticado())</b> *abre chave*<br>
+          ______<b>this.router.navigate(['login']);</b> <br>
+          ______<b>return false;</b> <br>
+          *fecha chave* <br>
+          __<b>return true;</b> <br>
+          *fecha chave* <br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-12.png">
+          </div>
+          <br>
+          Para encerrar, vamos criar um botão de "logout", para sair da página.<br>
+          Vamos adicionar o clique no botão, no template da página protegida.<br>
+          <br>
+          Vai no componente <b>pagina-protegida.component.html</b>, e no botão "logout",<br>
+          <b>button (click)="logout()"</b> "logout", feche o <b>/button</b> <br>
+          <br>
+          Agora vai no componente <b>pagina-protegida.component.ts</b> na classe,<br>
+          tem que adicionar no "constructor" o serviço de autenticação e o router, fica assim:<br>
+          <br>
+          <b>constructor(private auth: AuthService, private router: Router)</b> *abre e fecha as chaves*<br>
+          <br>
+          Agora crie o método "logout":<br>
+          <br>
+          <b>logout()</b> *abre chave* <br>
+          ____<b>this.auth.logout();</b> 'para limpar' <br>
+          ____<b>this.router.navigate(['']);</b> 'vai para a página inicial' <br>
+          *fecha a chave *<br>
+          Veja como é o código:<br>
+          <div class="imagem">
+            <img src="/assets/router-guard-13.png">
+          </div>
+          <br>
+          <br>
+          Finalizamos essa aula.<br>
+          <br>
+        </h2>
+    </div>
+  </div>
+</div>
+
+
+
+
