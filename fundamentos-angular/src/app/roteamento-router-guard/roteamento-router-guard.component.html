@@ -1,6 +1,5 @@
 <!---Coisas que serão exibidas na página--->
-<div id="todaPagina">
-  <div class="aula">
+<div class="aula">
     <div class="description">
       <h1 class="title">Router Guard</h1>
         <h2>
@@ -15,7 +14,7 @@
           coloque a "tag" <b>button</b> dentro dela o texto = 'logout', fecha o <b>/button</b>.<br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-1.png">
+            <img src="./assets/router-guard-1.png">
           </div>
           <br>
           Agora vai no template principal da nossa aplicação<b>app.component.html</b>, <br>
@@ -27,14 +26,14 @@
           <br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-2.png">
+            <img src="./assets/router-guard-2.png">
           </div>
           <br>
           Agora oara criar a rota, vamos no <b>app-routing.module.ts</b> e defina a rota,<br>
           <b> * path: 'pagina-protegida', component: PaginaProtegidaComponent, *</b> <br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-3.png">
+            <img src="./assets/router-guard-3.png">
           </div>
           <br>
           Quando abrimos a página ainda teremos acesso, clicando no link ou escrevendo na barra de navegação.<br>
@@ -52,7 +51,7 @@
           <br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-4.png">
+            <img src="./assets/router-guard-4.png">
           </div>
           <br>
           <b>Como adicionar esse guard-router a sua rota</b><br>
@@ -61,7 +60,7 @@
           acrescente o <b>canActivate:[AthGuard]</b> .<br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-5.png">
+            <img src="./assets/router-guard-5.png">
           </div>
           <br>
           Para ter acesso a essa página, vamos criar mais um componente.<br>
@@ -81,7 +80,7 @@
           <b>button (click)="login()"</b> " Entrar " <b>/buttonl</b> <br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-6.png">
+            <img src="./assets/router-guard-6.png">
           </div>
           <br>
           Para poder usar o "ngModel", deve ter importado o <b>FormsModule</b>, <br>
@@ -110,7 +109,7 @@
             link para o site <a href="https://jwt.io/">JWT</a> .<br>
             Como é esse token, veja na imagem:<br>
             <div class="imagem">
-              <img src="/assets/router-guard-7.png">
+              <img src="./assets/router-guard-7.png">
             </div>
             <br>
             Tem como codificar esse token, ali vemos que tem o id, o nome.<br>
@@ -136,7 +135,7 @@
           <b>return !!sessionStorage.getItem('acess-token');</b> , fecha as "chaves".<br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-8.png">
+            <img src="./assets/router-guard-8.png">
           </div>
           <b> !! </b> fez a conversão do código em booleano, agora é true ou false.<br>
           <b>acess-token</b> é a chave de acesso que teremos.<br>
@@ -164,7 +163,7 @@
           <br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-9.png">
+            <img src="./assets/router-guard-9.png">
           </div>
           Se o email e senha forem iguais a esses, será liberado o acesso, se não for não será.<br>
           <br>
@@ -184,7 +183,7 @@
           <b>private router: Router</b> => para navegar para outra página.<br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-10.png">
+            <img src="./assets/router-guard-10.png">
           </div>
           <br>
           No método "login()",  vamos fazer uma verificação, se for verdadeiro vai para a página,<br>
@@ -201,7 +200,7 @@
           *fecha a chaves* <br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-11.png">
+            <img src="./assets/router-guard-11.png">
           </div>
           <br>
           <br>
@@ -212,7 +211,7 @@
           <b>private router: Router</b> => para navegar para outra página.<br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-10.png">
+            <img src="./assets/router-guard-10.png">
           </div>
           <br>
           Agora coloque um "if" dentro do "canActivate", para verificar se está autenticado ou não,<br>
@@ -226,7 +225,7 @@
           *fecha chave* <br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-12.png">
+            <img src="./assets/router-guard-12.png">
           </div>
           <br>
           Para encerrar, vamos criar um botão de "logout", para sair da página.<br>
@@ -248,16 +247,16 @@
           *fecha a chave *<br>
           Veja como é o código:<br>
           <div class="imagem">
-            <img src="/assets/router-guard-13.png">
+            <img src="./assets/router-guard-13.png">
           </div>
           <br>
           <br>
           Finalizamos essa aula.<br>
           <br>
-        </h2>
-    </div>
+      </h2>
   </div>
 </div>
+
 
 
 

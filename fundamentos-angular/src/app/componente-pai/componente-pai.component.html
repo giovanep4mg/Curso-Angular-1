@@ -19,7 +19,7 @@
           adiciona a propriedade <b>sobrenome =" da Silva "</b>.<br>
           Como está na imagem abaixo:<br>
           <div class="imagem">
-              <img src="/assets/pai-filho-1.png" alt="print do código">
+              <img src="./assets/pai-filho-1.png" alt="print do código">
           </div>
           <br>
           Como passar essa propriedade que está no pai para o componente filho,<br>
@@ -34,7 +34,7 @@
           <b>app-componente-*filho*</b> sem os "asteriscos".<br>
           Como está na imagem:<br>
           <div class="imagem">
-              <img src="/assets/pai-filho-5.png" alt="print do código">
+              <img src="./assets/pai-filho-5.png" alt="print do código">
           </div>
           <br>
           Agora vai no componente filho <b>componente-filho.component.ts</b>,<br>
@@ -43,7 +43,7 @@
           coloque o "@Input()" a propriedade "sobrenome = ' ' " que vai está vazia.<br>
           Como está na imagem abaixo:<br>
           <div class="imagem">
-              <img src="/assets/pai-filho-2.png" alt="print do código">
+              <img src="./assets/pai-filho-2.png" alt="print do código">
           </div>
           <br>
           Agora vamos editar o componente filho, vai no <b>componente-filho.component.html</b>,<br>
@@ -52,7 +52,7 @@
           <b>[(ngModel)]="nome"</b>, vai acusar um erro por que não tem a propriedade "nome" <br>
           Como está na imagem abaixo:<br>
           <div class="imagem">
-              <img src="/assets/pai-filho-3.png" alt="print do código">
+              <img src="./assets/pai-filho-3.png" alt="print do código">
           </div>
           <br>
           Agora vamos adicionar essa propriedade no <b>componente-filho.component.ts</b>, <br>
@@ -64,14 +64,14 @@
           dentro das chaves duplas você coloca a propriedade "sobrenome" .<br>
           Como está na imagem abaixo:<br>
           <div class="imagem">
-              <img src="/assets/pai-filho-4.png" alt="print do código">
+              <img src="./assets/pai-filho-4.png" alt="print do código">
           </div>
           <br>
           Agora vai componente <b>componente-pai.component.html</b>, e dentro da tag<br>
           "app-componente-filho" acrescente a diretiva <b>[sobrenome]="sobrenome"</b>
           Como está na imagem abaixo:<br>
           <div class="imagem">
-              <img src="/assets/pai-filho-6.png" alt="print do código">
+              <img src="./assets/pai-filho-6.png" alt="print do código">
           </div>
           <br>
           Como fica na página:<br>
@@ -90,7 +90,7 @@
           o nome da variável será "#filho" e assim terá acesso a toda propriedade,<br>
           Como está o código na imagem abaixo:<br>
           <div class="imagem">
-              <img src="/assets/pai-filho-7.png" alt="print do código">
+              <img src="./assets/pai-filho-7.png" alt="print do código">
           </div>
           <br>
           Como fica na página:<br>
@@ -113,7 +113,7 @@
           fecha a "chave".<br>
           Veja como fica o código na imagem abaixo:<br>
           <div class="imagem">
-            <img src="/assets/pai-filho-8.png" alt="print do código">
+            <img src="./assets/pai-filho-8.png" alt="print do código">
           </div>
           <br>
           Vai disparar esse método que está no elemento Pai, pelo elemento Filho para isso,<br>
@@ -125,7 +125,7 @@
           precisar passar alguma coisa dentro "()", usa o <b>$event</b>. <br>
           Veja como fica o código na imagem abaixo:<br>
           <div class="imagem">
-            <img src="/assets/pai-filho-9.png" alt="print do código">
+            <img src="./assets/pai-filho-9.png" alt="print do código">
           </div>
           <br>
           <br>
@@ -134,7 +134,7 @@
           <b>mostraNome</b> e ele será um <b>new EventEmitter()</b>
           Veja como fica o código na imagem abaixo:<br>
           <div class="imagem">
-            <img src="/assets/pai-filho-10.png" alt="print do código">
+            <img src="./assets/pai-filho-10.png" alt="print do código">
           </div>
           <br>
           Agora vamos adicionar um botão, no componente <b>componente-filho.component.html</b>,<br>
@@ -144,7 +144,7 @@
           <b>( nome + ' ' + sobrenome )</b>,<br>
           Veja como fica o código na imagem abaixo:<br>
           <div class="imagem">
-            <img src="/assets/pai-filho-11.png" alt="print do código">
+            <img src="./assets/pai-filho-11.png" alt="print do código">
           </div>
           <br>
           Como fica na página:<br>

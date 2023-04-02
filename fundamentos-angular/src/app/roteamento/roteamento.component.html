@@ -1,6 +1,5 @@
 <!---Coisas que serão exibidas na página--->
-<div id="todaPagina">
-  <div class="aula">
+<div class="aula">
     <div class="description">
       <h1 class="title">Roteamento</h1>
         <h2>
@@ -25,19 +24,19 @@
           <br>
           <b>--flat</b> => usa para ele já ficar na pasta "app" .<br>
           <div class="imagem">
-            <img src="/assets/roteamento-1.png">
+            <img src="./assets/roteamento-1.png">
           </div>
           <br>
           <b>--module</b> => já vai acrescenta ele dentro do "app.module.ts" .<br>
           <div class="imagem">
-            <img src="/assets/roteamento-2.png">
+            <img src="./assets/roteamento-2.png">
           </div>
           <br>
           <br>
           Vamos começar a trabalhar esse módulo de roteamento, no <b>app.routing.module.ts</b> .<br>
           No "@ngModule" dentro do "imports" adiciona o  <b>RouterModule.forRoot(routes)</b> ,<br>
           <div class="imagem">
-            <img src="/assets/roteamento-3.png">
+            <img src="./assets/roteamento-3.png">
           </div>
           <br>
           para dizer que vai importa "rotas", e agora vamos criar essas rotas:<br>
@@ -45,7 +44,7 @@
           Acima do "@ngModule", você coloca esses comandos:<br>
           <b>const routes: Routes = [ *aqui dentro passa a rota* ]</b>, já vamos adicionar a primeira rota<br>            <b> * path: 'primeira-pagina', component: PrimeiraPaginaComponent *,</b> no lugar dos asteriscos são "chaves".<br>
           <div class="imagem">
-            <img src="/assets/roteamento-4.png">
+            <img src="./assets/roteamento-4.png">
           </div>
           <br>
           <b>path</b> é o endereço que digitamos na barra do navegador.<br>
@@ -73,6 +72,5 @@
           <br>
         </h2>
     </div>
-  </div>
 </div>
 

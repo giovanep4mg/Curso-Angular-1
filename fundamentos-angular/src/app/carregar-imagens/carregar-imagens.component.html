@@ -1,5 +1,5 @@
 <!--Aula-CarregarImagem-->
-<div class="aula4">
+<div class="aula">
     <div class="description">
     <h1 class="title">Carregar imagem</h1>
       <h2>
@@ -15,12 +15,12 @@
       Como carregar uma imagem?<br>
       Você deve colocar a imagem na pasta "assets".<br>
       Depois no componente <b>carregar-imagens.component.component.ts</b>, na classe e adiciona,<br>
-      a imagem dentro de uma propriedade, exemplo <b>urlimagem = '/assets/nego1.jpg';</b>.<br>
+      a imagem dentro de uma propriedade, exemplo <b>urlimagem = './assets/nego1.jpg';</b>.<br>
       Criei a propriedade "urlimagem" e dentro dela coloquei onde está a foto,<br>
       assim quando usar a  propriedade "urlimagem", vai chamar a imagem.<br>
       Veja como fica no código, dentro do componente <b>carregar-imagens.component.component.ts</b>:<br>
       <div class="imagem">
-          <img src="/assets/carregar-imagem-url.png" alt="print do programa">
+          <img src="./assets/carregar-imagem-url.png" alt="print do programa">
       </div>
       <br>
       Para usar essa imagem, no template, ou seja, na página você deve chamar usando a tag <b>img</b>,<br>
@@ -28,7 +28,7 @@
       passei a propriedade, e também já adicionei um tamanho para a imagem,<b> width = largura, heigth = altura</b>.<br>
       Veja como fica o código:<br>
       <div class="imagem">
-          <img src="/assets/chamar -imagem-carregada.png" alt="print do programa">
+          <img src="./assets/chamar -imagem-carregada.png" alt="print do programa">
       </div>
       <br>
       Como fica na página:<br>
@@ -39,11 +39,11 @@
       <br>
       Você também pode "chamar" a imagem direto sem precisar cria a propriedade, basta colocar o caminho da imagem,<br>
       A imagem deve estar  na pasta <b>assets</b>, ai quando for chama-la passe o caminho, assim:<br>
-      cria a tag "img" <b> < img src = "/assets/nego1.jpg" width="300" height="300" > </b>,<br>
+      cria a tag "img" <b> < img src = "./assets/nego1.jpg" width="300" height="300" > </b>,<br>
       também já coloquei um tamanho que ela vai ficar.<br>
       já será exibida na página.<br>
       <div class="imagem">
-        <img src="/assets/nego1.jpg" width="300" height="300" >
+        <img src="./assets/nego1.jpg" width="300" height="300" >
       </div>
       </h2>
     </div>
